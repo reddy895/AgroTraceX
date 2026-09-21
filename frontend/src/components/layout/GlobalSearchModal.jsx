@@ -150,11 +150,11 @@ export const GlobalSearchModal = () => {
                           className="flex items-center justify-between p-2.5 rounded-lg hover:bg-slate-50 border border-transparent hover:border-slate-200 transition-colors cursor-pointer group"
                         >
                           <div className="flex items-center gap-3 min-w-0">
-                            <div className="p-2 rounded-lg bg-emerald-50 text-[#0F4A2A] shrink-0 group-hover:bg-[#0F4A2A] group-hover:text-white transition-colors">
+                            <div className="p-2 rounded-lg bg-emerald-50 text-[#556D3F] shrink-0 group-hover:bg-[#556D3F] group-hover:text-white transition-colors">
                               <Icon className="w-4 h-4" />
                             </div>
                             <div className="min-w-0">
-                              <div className="text-xs font-semibold text-slate-900 group-hover:text-[#0F4A2A] transition-colors truncate">
+                              <div className="text-xs font-semibold text-slate-900 group-hover:text-[#556D3F] transition-colors truncate">
                                 {item.title}
                               </div>
                               <div className="text-3xs text-slate-500 truncate">{item.subtitle}</div>

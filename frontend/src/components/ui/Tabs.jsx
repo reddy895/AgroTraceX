@@ -19,7 +19,7 @@ export const Tabs = ({
               onClick={() => onChange(tab.id)}
               className={`px-3.5 py-1.5 text-xs font-semibold rounded-lg transition-all whitespace-nowrap cursor-pointer ${
                 isActive
-                  ? 'bg-[#0F4A2A] text-white shadow-xs'
+                  ? 'bg-[#556D3F] text-white shadow-xs'
                   : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
               }`}
             >
@@ -43,7 +43,7 @@ export const Tabs = ({
             onClick={() => onChange(tab.id)}
             className={`relative py-3 px-4 text-sm font-medium transition-colors whitespace-nowrap cursor-pointer ${
               isActive
-                ? 'text-[#0F4A2A] font-semibold'
+                ? 'text-[#556D3F] font-semibold'
                 : 'text-slate-600 hover:text-slate-900 hover:border-slate-300'
             }`}
           >
@@ -60,7 +60,7 @@ export const Tabs = ({
               )}
             </div>
             {isActive && (
-              <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#0F4A2A] rounded-full" />
+              <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#556D3F] rounded-full" />
             )}
           </button>
         );

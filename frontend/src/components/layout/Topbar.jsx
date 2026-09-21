@@ -11,7 +11,7 @@ export const Topbar = ({ onOpenMobileMenu }) => {
   const { currentUser } = useAuth();
 
   return (
-    <header className="h-16 bg-white border-b border-slate-200/90 px-4 sm:px-6 flex items-center justify-between gap-4 sticky top-0 z-20">
+    <header className="h-[4.25rem] bg-[#fffdf7]/95 border-b border-slate-200/90 px-5 sm:px-7 flex items-center justify-between gap-4 sticky top-0 z-20 backdrop-blur-sm">
       {/* Left side: Mobile menu toggle + Global Search trigger */}
       <div className="flex items-center gap-3 flex-1 max-w-md">
         <button
@@ -50,7 +50,7 @@ export const Topbar = ({ onOpenMobileMenu }) => {
 
         {/* User Profile info */}
         <div className="flex items-center gap-2.5 pl-1">
-          <div className="w-8 h-8 rounded-full bg-[#0F4A2A] text-white flex items-center justify-center text-xs font-bold shadow-xs">
+          <div className="w-8 h-8 rounded-full bg-[#556D3F] text-white flex items-center justify-center text-xs font-bold shadow-xs">
             {currentUser.avatar}
           </div>
           <div className="hidden md:block text-left">

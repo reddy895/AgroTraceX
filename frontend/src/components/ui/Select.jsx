@@ -29,7 +29,7 @@ export const Select = ({
           id={selectId}
           value={value}
           onChange={onChange}
-          className={`block w-full appearance-none rounded-lg border text-sm transition-colors pr-9 pl-3 py-2 bg-white focus:outline-none focus:ring-2 focus:ring-[#0F4A2A]/25 focus:border-[#0F4A2A] disabled:bg-slate-50 disabled:text-slate-500 ${
+          className={`block w-full appearance-none rounded-lg border text-sm transition-colors pr-9 pl-3 py-2 bg-[#fffdf7] focus:outline-none focus:ring-2 focus:ring-[#556D3F]/25 focus:border-[#556D3F] disabled:bg-slate-50 disabled:text-slate-500 ${
             error
               ? 'border-red-300 text-red-900 focus:ring-red-200 focus:border-red-500'
               : 'border-slate-300 text-slate-900 hover:border-slate-400'

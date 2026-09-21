@@ -65,20 +65,20 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #CBD5E1;
+  background: #c8c1ad;
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #94A3B8;
+  background: #9b987f;
 }
 
 /* Clean utility classes */
 .ag-card {
-  background: #ffffff;
-  border: 1px solid #E2E8F0;
-  border-radius: 0.75rem;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04), 0 1px 2px -1px rgba(0, 0, 0, 0.04);
+  background: #fffdf7;
+  border: 1px solid #ded9c9;
+  border-radius: 0.625rem;
+  box-shadow: 0 1px 3px rgba(57, 65, 45, 0.05);
 }
 
 .ag-badge-green {

@@ -24,9 +24,9 @@ export const Button = ({
   };
 
   const variantStyles = {
-    primary: "bg-[#0F4A2A] text-white hover:bg-[#0D3F24] focus:ring-[#0F4A2A]/40 border border-transparent shadow-xs",
+    primary: "bg-[#556D3F] text-white hover:bg-[#405832] focus:ring-[#556D3F]/40 border border-transparent shadow-xs",
     secondary: "bg-slate-100 text-slate-800 hover:bg-slate-200 focus:ring-slate-400 border border-slate-200/80 shadow-2xs",
-    outline: "bg-white text-slate-700 hover:bg-slate-50 border border-slate-300 focus:ring-[#0F4A2A]/30 shadow-2xs",
+    outline: "bg-[#fffdf7] text-slate-700 hover:bg-slate-50 border border-slate-300 focus:ring-[#556D3F]/30 shadow-2xs",
     ghost: "bg-transparent text-slate-600 hover:bg-slate-100 hover:text-slate-900 focus:ring-slate-400",
     danger: "bg-red-600 text-white hover:bg-red-700 focus:ring-red-500 border border-transparent shadow-xs",
     success: "bg-emerald-600 text-white hover:bg-emerald-700 focus:ring-emerald-500 border border-transparent shadow-xs"

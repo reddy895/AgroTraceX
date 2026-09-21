@@ -30,7 +30,7 @@ export const Input = ({
         <input
           id={inputId}
           type={type}
-          className={`block w-full rounded-lg border text-sm transition-colors placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#0F4A2A]/25 focus:border-[#0F4A2A] disabled:bg-slate-50 disabled:text-slate-500 ${
+          className={`block w-full rounded-lg border bg-[#fffdf7] text-sm transition-colors placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#556D3F]/25 focus:border-[#556D3F] disabled:bg-slate-50 disabled:text-slate-500 ${
             Icon ? 'pl-9' : 'pl-3'
           } pr-3 py-2 ${
             error

@@ -45,7 +45,7 @@ export const RoleSwitcher = () => {
         className="flex items-center gap-2 px-2.5 py-1.5 rounded-lg border border-slate-200 bg-white hover:bg-slate-50 transition-colors shadow-2xs text-xs font-medium text-slate-700 cursor-pointer"
         title="Switch perspective role"
       >
-        <Shield className="w-3.5 h-3.5 text-[#0F4A2A]" />
+        <Shield className="w-3.5 h-3.5 text-[#556D3F]" />
         <span className="hidden md:inline text-slate-500">Role:</span>
         <span className="font-bold text-slate-900">{roleConfigs[currentUser.role]?.label || currentUser.role}</span>
         <ChevronDown className="w-3 h-3 text-slate-400" />

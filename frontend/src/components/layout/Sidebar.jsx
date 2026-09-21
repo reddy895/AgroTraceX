@@ -56,7 +56,7 @@ export const Sidebar = ({
 
   return (
     <aside
-      className={`bg-white border-r border-slate-200/90 flex flex-col transition-all duration-200 z-30 ${
+      className={`bg-[#fffdf7] border-r border-slate-200/90 flex flex-col transition-all duration-200 z-30 ${
         isMobile
           ? 'w-72 h-full'
           : collapsed
@@ -104,7 +104,7 @@ export const Sidebar = ({
               onClick={onCloseMobile}
               className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-semibold transition-all group relative ${
                 isActive
-                  ? 'bg-[#0F4A2A] text-white shadow-xs'
+                  ? 'bg-[#556D3F] text-white shadow-xs'
                   : item.highlight
                   ? 'text-emerald-800 bg-emerald-50/70 hover:bg-emerald-100/70 border border-emerald-200/60'
                   : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
