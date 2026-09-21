@@ -8,7 +8,7 @@ export const Breadcrumb = ({ items = [] }) => {
     <nav className="flex items-center text-xs text-slate-500 mb-2">
       <Link
         to="/"
-        className="flex items-center gap-1 hover:text-[#0F4A2A] transition-colors"
+        className="flex items-center gap-1 hover:text-[#556D3F] transition-colors"
       >
         <Home className="w-3.5 h-3.5" />
         <span className="hidden sm:inline">Home</span>
@@ -25,7 +25,7 @@ export const Breadcrumb = ({ items = [] }) => {
             ) : (
               <Link
                 to={item.to}
-                className="hover:text-[#0F4A2A] transition-colors truncate max-w-[150px] sm:max-w-none"
+                className="hover:text-[#556D3F] transition-colors truncate max-w-[150px] sm:max-w-none"
               >
                 {item.label}
               </Link>

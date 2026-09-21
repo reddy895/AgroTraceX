@@ -63,7 +63,7 @@ export const NotificationDropdown = () => {
               {unreadCount > 0 && (
                 <button
                   onClick={markAllRead}
-                  className="text-2xs text-[#0F4A2A] hover:underline font-medium cursor-pointer"
+                  className="text-2xs text-[#556D3F] hover:underline font-medium cursor-pointer"
                 >
                   Mark all read
                 </button>
@@ -103,7 +103,7 @@ export const NotificationDropdown = () => {
                             markSingleRead(alert.id);
                             setIsOpen(false);
                           }}
-                          className="inline-flex items-center gap-1 text-2xs font-semibold text-[#0F4A2A] hover:underline mt-1.5"
+                          className="inline-flex items-center gap-1 text-2xs font-semibold text-[#556D3F] hover:underline mt-1.5"
                         >
                           <span>View Details</span>
                           <ExternalLink className="w-3 h-3" />
@@ -129,7 +129,7 @@ export const NotificationDropdown = () => {
               <Link
                 to="/trials"
                 onClick={() => setIsOpen(false)}
-                className="text-xs font-semibold text-slate-700 hover:text-[#0F4A2A]"
+                className="text-xs font-semibold text-slate-700 hover:text-[#556D3F]"
               >
                 View all trial operational alerts →
               </Link>

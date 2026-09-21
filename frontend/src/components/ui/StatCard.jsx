@@ -23,15 +23,23 @@ export const StatCard = ({
   return (
     <div
       onClick={onClick}
-      className={`bg-white border border-slate-200/90 rounded-xl p-5 shadow-xs transition-all hover:shadow-sm ${
+      onKeyDown={(event) => {
+        if (onClick && (event.key === 'Enter' || event.key === ' ')) {
+          event.preventDefault();
+          onClick(event);
+        }
+      }}
+      role={onClick ? 'button' : undefined}
+      tabIndex={onClick ? 0 : undefined}
+      className={`bg-[#fffdf7] border border-slate-200/90 rounded-[10px] p-4 sm:p-5 min-h-[132px] shadow-xs transition-all duration-200 hover:shadow-sm hover:-translate-y-0.5 focus-within:ring-2 focus-within:ring-[#556D3F]/30 ${
         onClick ? 'cursor-pointer hover:border-slate-300' : ''
       } ${className}`}
     >
       <div className="flex items-start justify-between gap-3">
         <div className="flex-1 min-w-0">
-          <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider truncate">{title}</p>
+          <p className="text-2xs font-semibold text-slate-500 uppercase tracking-[0.08em] truncate">{title}</p>
           <div className="mt-2 flex items-baseline gap-2">
-            <span className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900">{value}</span>
+            <span className="text-2xl sm:text-3xl font-bold tracking-tight leading-none text-slate-900">{value}</span>
             {trendValue && (
               <span
                 className={`inline-flex items-center text-xs font-medium px-1.5 py-0.5 rounded ${
@@ -48,7 +56,7 @@ export const StatCard = ({
               </span>
             )}
           </div>
-          {subtitle && <p className="text-xs text-slate-500 mt-1 truncate">{subtitle}</p>}
+          {subtitle && <p className="text-2xs text-slate-500 mt-2 leading-relaxed line-clamp-2">{subtitle}</p>}
         </div>
         {Icon && (
           <div className={`p-2.5 rounded-lg border shrink-0 ${accentStyles[accent] || accentStyles.green}`}>

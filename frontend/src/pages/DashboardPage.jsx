@@ -8,6 +8,7 @@ import { Button } from '../components/ui/Button';
 import { Table } from '../components/ui/Table';
 import { StatusBadge } from '../components/ui/StatusBadge';
 import { Badge } from '../components/ui/Badge';
+import { FieldIntelligencePanel } from '../components/shared/FieldIntelligencePanel';
 import {
   FlaskConical,
   Package,
@@ -19,6 +20,10 @@ import {
   ArrowRight,
   TrendingUp,
   Clock,
+  Activity,
+  Database,
+  CloudRain,
+  Wifi,
   ChevronRight,
   Plus
 } from 'lucide-react';
@@ -44,7 +49,7 @@ export const DashboardPage = () => {
       key: 'id',
       render: (row) => (
         <div className="max-w-[220px]">
-          <span className="font-mono font-bold text-xs text-[#0F4A2A] block">{row.id}</span>
+          <span className="font-mono font-bold text-xs text-[#556D3F] block">{row.id}</span>
           <span className="text-xs text-slate-800 font-medium truncate block mt-0.5">{row.crop} ({row.variety})</span>
         </div>
       )
@@ -102,7 +107,7 @@ export const DashboardPage = () => {
                   ? 'bg-amber-500'
                   : row.progressPercentage === 100
                   ? 'bg-emerald-600'
-                  : 'bg-[#0F4A2A]'
+                  : 'bg-[#556D3F]'
               }`}
               style={{ width: `${row.progressPercentage}%` }}
             />
@@ -136,7 +141,7 @@ export const DashboardPage = () => {
   ];
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-7">
       {/* Top Section */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
@@ -169,7 +174,7 @@ export const DashboardPage = () => {
       </div>
 
       {/* 6 Key Executive Stat Cards */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-3 sm:gap-4">
         <StatCard
           title="Active Trials"
           value="48"
@@ -226,6 +231,13 @@ export const DashboardPage = () => {
         />
       </div>
 
+      <div className="flex flex-wrap items-center gap-x-5 gap-y-2 border-y border-slate-200/80 py-3 text-xs text-slate-600">
+        <span className="inline-flex items-center gap-1.5"><Wifi className="w-3.5 h-3.5 text-emerald-700" /> Last sync <strong className="font-semibold text-slate-800">2 min ago</strong></span>
+        <span className="inline-flex items-center gap-1.5"><Activity className="w-3.5 h-3.5 text-emerald-700" /> Sites reporting <strong className="font-semibold text-slate-800">58/62</strong></span>
+        <span className="inline-flex items-center gap-1.5"><Database className="w-3.5 h-3.5 text-blue-700" /> Observations today <strong className="font-semibold text-slate-800">18</strong></span>
+        <span className="inline-flex items-center gap-1.5"><CloudRain className="w-3.5 h-3.5 text-amber-600" /> Weather alerts <strong className="font-semibold text-slate-800">2</strong></span>
+      </div>
+
       {/* Two Column Section: Trial Progress Overview & Alerts */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Trial Progress Overview & Stage Pipeline Breakdown */}
@@ -234,7 +246,7 @@ export const DashboardPage = () => {
             title="Trial Progress Overview"
             subtitle="Real-time phenological progression across all registered field trial sites"
             action={
-              <Link to="/analytics" className="text-xs font-semibold text-[#0F4A2A] hover:underline flex items-center gap-1">
+              <Link to="/analytics" className="text-xs font-semibold text-[#556D3F] hover:underline flex items-center gap-1">
                 <span>View Analytics</span>
                 <ArrowRight className="w-3 h-3" />
               </Link>
@@ -280,7 +292,7 @@ export const DashboardPage = () => {
                   { stage: 'Farmer Assigned & Field Verified', count: 5, percent: 10, color: 'bg-blue-400' },
                   { stage: 'Sown & Emergence', count: 6, percent: 12, color: 'bg-emerald-500' },
                   { stage: 'Growing (Vegetative V4-V12)', count: 11, percent: 23, color: 'bg-emerald-600' },
-                  { stage: 'Flowering & Silking', count: 8, percent: 17, color: 'bg-[#0F4A2A]' },
+                  { stage: 'Flowering & Silking', count: 8, percent: 17, color: 'bg-[#556D3F]' },
                   { stage: 'Harvest & Field Weighing', count: 3, percent: 6, color: 'bg-amber-500' },
                   { stage: 'Sample Lab Testing', count: 4, percent: 8, color: 'bg-blue-600' },
                   { stage: 'Completed & Certified', count: 7, percent: 16, color: 'bg-emerald-700' }
@@ -354,7 +366,7 @@ export const DashboardPage = () => {
                     <span className="font-mono text-3xs text-slate-500">{alert.trialId}</span>
                     <Link
                       to={alert.link}
-                      className="text-xs font-semibold text-[#0F4A2A] hover:underline inline-flex items-center gap-1"
+                      className="text-xs font-semibold text-[#556D3F] hover:underline inline-flex items-center gap-1"
                     >
                       Resolve Action →
                     </Link>
@@ -366,6 +378,8 @@ export const DashboardPage = () => {
         </div>
       </div>
 
+      <FieldIntelligencePanel />
+
       {/* Recent Trials Table */}
       <Card
         title="Recent Trials Registry"
@@ -373,7 +387,7 @@ export const DashboardPage = () => {
         action={
           <Link
             to="/trials"
-            className="text-xs font-semibold text-[#0F4A2A] hover:underline flex items-center gap-1"
+            className="text-xs font-semibold text-[#556D3F] hover:underline flex items-center gap-1"
           >
             <span>View All Trials</span>
             <ArrowRight className="w-3 h-3" />

@@ -72,7 +72,7 @@ export const Sidebar = ({
           </NavLink>
         ) : (
           <NavLink to="/" className="flex items-center justify-center">
-            <div className="w-8 h-8 rounded-lg bg-[#0F4A2A] text-white flex items-center justify-center font-bold text-sm">
+            <div className="w-8 h-8 rounded-lg bg-[#556D3F] text-white flex items-center justify-center font-bold text-sm">
               X
             </div>
           </NavLink>
@@ -116,7 +116,7 @@ export const Sidebar = ({
                   isActive
                     ? 'text-white'
                     : item.highlight
-                    ? 'text-[#0F4A2A]'
+                    ? 'text-[#556D3F]'
                     : 'text-slate-400 group-hover:text-slate-700'
                 }`}
               />
