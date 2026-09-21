@@ -1,25 +1,52 @@
 @import "tailwindcss";
 
+@theme {
+  --color-slate-50: #f8f5eb;
+  --color-slate-100: #f0ecdf;
+  --color-slate-200: #ded9c9;
+  --color-slate-300: #c8c1ad;
+  --color-slate-400: #9b987f;
+  --color-slate-500: #747765;
+  --color-slate-600: #5b624f;
+  --color-slate-700: #454d3f;
+  --color-slate-800: #30382d;
+  --color-slate-900: #20291f;
+  --color-emerald-50: #edf3e6;
+  --color-emerald-100: #dce8d1;
+  --color-emerald-200: #c3d6b5;
+  --color-emerald-500: #758f58;
+  --color-emerald-600: #607c47;
+  --color-emerald-700: #4e693a;
+  --color-emerald-800: #405832;
+  --color-emerald-900: #314528;
+  --color-amber-50: #fbf1d9;
+  --color-amber-500: #b4863c;
+  --color-red-500: #b85c4e;
+  --color-red-600: #a44e43;
+}
+
 @layer base {
   :root {
-    --brand-primary: #0F4A2A;
-    --brand-primary-hover: #0D3F24;
-    --brand-dark: #0F172A;
-    --brand-surface: #FFFFFF;
-    --brand-bg: #F8FAFC;
-    --brand-border: #E2E8F0;
+    --brand-primary: #556d3f;
+    --brand-primary-hover: #405832;
+    --brand-dark: #20291f;
+    --brand-surface: #fffdf7;
+    --brand-bg: #f8f5eb;
+    --brand-border: #ded9c9;
   }
 
   body {
-    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    background-color: #F8FAFC;
-    color: #1E293B;
+    font-family: 'Avenir Next', 'Trebuchet MS', sans-serif;
+    background-color: var(--brand-bg);
+    color: #30382d;
+    letter-spacing: 0.008em;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+    font-family: 'Avenir Next', 'Trebuchet MS', sans-serif;
+    letter-spacing: -0.012em;
   }
 
   code, pre, .font-mono {
