@@ -69,7 +69,7 @@ export const HeroSection = ({ onGetStarted, onExplorePlatform }) => {
             </div>
           </div>
 
-          {/* Right Column: Interactive 3D Plant / Leaf Visual */}
+          {/* Right Column: 3D Interactive Plant */}
           <div className="lg:col-span-5 relative flex items-center justify-center">
             <HeroPlantCanvas />
           </div>
