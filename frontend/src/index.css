@@ -160,3 +160,30 @@
 .ag-pulse-glow {
   animation: subtlePulse 4s ease-in-out infinite;
 }
+
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes spinReverseSlow {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { transform: scale(1); filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.2)); }
+  50% { transform: scale(1.02); filter: drop-shadow(0 0 35px rgba(255, 255, 255, 0.45)); }
+}
+
+.ag-spin-slow {
+  animation: spinSlow 9s linear infinite;
+}
+
+.ag-spin-reverse-slow {
+  animation: spinReverseSlow 14s linear infinite;
+}
+
+.ag-pulse-logo {
+  animation: pulseGlow 3s ease-in-out infinite;
+}

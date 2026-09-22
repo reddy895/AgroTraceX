@@ -1,6 +1,118 @@
 {
   "users": [
     {
+      "id": "USR-789998",
+      "name": "Unverified User",
+      "email": "reject.client.1790085789996@unverified.org",
+      "phone": "+1 000 000 0000",
+      "organization": "Suspicious Corp",
+      "designation": "Tester",
+      "passwordHash": "password123",
+      "role": "CLIENT",
+      "status": "REJECTED",
+      "reason": "Random reason",
+      "createdAt": "2026-09-22T14:03:09.998Z",
+      "updatedAt": "2026-09-22T14:03:10.002Z"
+    },
+    {
+      "id": "USR-789972",
+      "name": "Dr. Ramesh Kumar",
+      "email": "test.client.1790085789970@agriresearch.org",
+      "phone": "+91 99887 66554",
+      "organization": "Punjab Agricultural University",
+      "designation": "Senior Wheat Breeder",
+      "passwordHash": "secureclientpass",
+      "role": "CLIENT",
+      "status": "REVOKED",
+      "reason": "Evaluating drought resistance lines in Zone 4",
+      "createdAt": "2026-09-22T14:03:09.972Z",
+      "updatedAt": "2026-09-22T14:03:09.991Z"
+    },
+    {
+      "id": "USR-725698",
+      "name": "Unverified User",
+      "email": "reject.client.1790085725696@unverified.org",
+      "phone": "+1 000 000 0000",
+      "organization": "Suspicious Corp",
+      "designation": "Tester",
+      "passwordHash": "password123",
+      "role": "CLIENT",
+      "status": "REJECTED",
+      "reason": "Random reason",
+      "createdAt": "2026-09-22T14:02:05.698Z",
+      "updatedAt": "2026-09-22T14:02:05.702Z"
+    },
+    {
+      "id": "USR-725673",
+      "name": "Dr. Ramesh Kumar",
+      "email": "test.client.1790085725671@agriresearch.org",
+      "phone": "+91 99887 66554",
+      "organization": "Punjab Agricultural University",
+      "designation": "Senior Wheat Breeder",
+      "passwordHash": "secureclientpass",
+      "role": "CLIENT",
+      "status": "REVOKED",
+      "reason": "Evaluating drought resistance lines in Zone 4",
+      "createdAt": "2026-09-22T14:02:05.673Z",
+      "updatedAt": "2026-09-22T14:02:05.692Z"
+    },
+    {
+      "id": "USR-526719",
+      "name": "Unverified User",
+      "email": "reject.client.1790085526717@unverified.org",
+      "phone": "+1 000 000 0000",
+      "organization": "Suspicious Corp",
+      "designation": "Tester",
+      "passwordHash": "password123",
+      "role": "CLIENT",
+      "status": "REJECTED",
+      "reason": "Random reason",
+      "createdAt": "2026-09-22T13:58:46.719Z",
+      "updatedAt": "2026-09-22T13:58:46.722Z"
+    },
+    {
+      "id": "USR-526695",
+      "name": "Dr. Ramesh Kumar",
+      "email": "test.client.1790085526693@agriresearch.org",
+      "phone": "+91 99887 66554",
+      "organization": "Punjab Agricultural University",
+      "designation": "Senior Wheat Breeder",
+      "passwordHash": "secureclientpass",
+      "role": "CLIENT",
+      "status": "REVOKED",
+      "reason": "Evaluating drought resistance lines in Zone 4",
+      "createdAt": "2026-09-22T13:58:46.695Z",
+      "updatedAt": "2026-09-22T13:58:46.714Z"
+    },
+    {
+      "id": "USR-743109",
+      "name": "Unverified User",
+      "email": "reject.client.1790084743108@unverified.org",
+      "phone": "+1 000 000 0000",
+      "organization": "Suspicious Corp",
+      "designation": "Tester",
+      "passwordHash": "password123",
+      "role": "CLIENT",
+      "status": "REJECTED",
+      "reason": "Random reason",
+      "createdAt": "2026-09-22T13:45:43.109Z",
+      "updatedAt": "2026-09-22T13:45:43.111Z"
+    },
+    {
+      "id": "USR-743088",
+      "name": "Dr. Ramesh Kumar",
+      "email": "test.client.1790084743086@agriresearch.org",
+      "phone": "+91 99887 66554",
+      "organization": "Punjab Agricultural University",
+      "designation": "Senior Wheat Breeder",
+      "passwordHash": "secureclientpass",
+      "role": "CLIENT",
+      "status": "REVOKED",
+      "reason": "Evaluating drought resistance lines in Zone 4",
+      "createdAt": "2026-09-22T13:45:43.088Z",
+      "updatedAt": "2026-09-22T13:45:43.104Z"
+    },
+    {
       "id": "USR-338881",
       "name": "Unverified User",
       "email": "reject.client.1790084338878@unverified.org",
@@ -142,6 +254,186 @@
     }
   ],
   "activities": [
+    {
+      "id": "ACT-1790085790002",
+      "type": "ACCESS_REJECTED",
+      "title": "Access Request Declined",
+      "description": "Admin rejected access for Unverified User (Suspicious Corp). Reason: Did not meet institutional verification criteria",
+      "userId": "USR-789998",
+      "actor": "Dr. Alok Verma",
+      "timestamp": "2026-09-22T14:03:10.002Z"
+    },
+    {
+      "id": "ACT-1790085789998",
+      "type": "USER_REGISTRATION",
+      "title": "New Client Request",
+      "description": "Unverified User (Suspicious Corp) submitted workspace registration request.",
+      "userId": "USR-789998",
+      "actor": "Unverified User",
+      "timestamp": "2026-09-22T14:03:09.998Z"
+    },
+    {
+      "id": "ACT-1790085789991",
+      "type": "ACCESS_REVOKED",
+      "title": "Workspace Access Revoked",
+      "description": "Admin revoked workspace access for Dr. Ramesh Kumar (Punjab Agricultural University). Reason: Commercial trial license ended",
+      "userId": "USR-789972",
+      "actor": "Dr. Alok Verma",
+      "timestamp": "2026-09-22T14:03:09.991Z"
+    },
+    {
+      "id": "ACT-1790085789985",
+      "type": "ACCESS_APPROVED",
+      "title": "Workspace Access Approved",
+      "description": "Admin approved full workspace access for Dr. Ramesh Kumar (Punjab Agricultural University).",
+      "userId": "USR-789972",
+      "actor": "Dr. Alok Verma",
+      "timestamp": "2026-09-22T14:03:09.985Z"
+    },
+    {
+      "id": "ACT-1790085789972",
+      "type": "USER_REGISTRATION",
+      "title": "New Client Request",
+      "description": "Dr. Ramesh Kumar (Punjab Agricultural University) submitted workspace registration request.",
+      "userId": "USR-789972",
+      "actor": "Dr. Ramesh Kumar",
+      "timestamp": "2026-09-22T14:03:09.972Z"
+    },
+    {
+      "id": "ACT-1790085725702",
+      "type": "ACCESS_REJECTED",
+      "title": "Access Request Declined",
+      "description": "Admin rejected access for Unverified User (Suspicious Corp). Reason: Did not meet institutional verification criteria",
+      "userId": "USR-725698",
+      "actor": "Dr. Alok Verma",
+      "timestamp": "2026-09-22T14:02:05.702Z"
+    },
+    {
+      "id": "ACT-1790085725698",
+      "type": "USER_REGISTRATION",
+      "title": "New Client Request",
+      "description": "Unverified User (Suspicious Corp) submitted workspace registration request.",
+      "userId": "USR-725698",
+      "actor": "Unverified User",
+      "timestamp": "2026-09-22T14:02:05.698Z"
+    },
+    {
+      "id": "ACT-1790085725692",
+      "type": "ACCESS_REVOKED",
+      "title": "Workspace Access Revoked",
+      "description": "Admin revoked workspace access for Dr. Ramesh Kumar (Punjab Agricultural University). Reason: Commercial trial license ended",
+      "userId": "USR-725673",
+      "actor": "Dr. Alok Verma",
+      "timestamp": "2026-09-22T14:02:05.692Z"
+    },
+    {
+      "id": "ACT-1790085725686",
+      "type": "ACCESS_APPROVED",
+      "title": "Workspace Access Approved",
+      "description": "Admin approved full workspace access for Dr. Ramesh Kumar (Punjab Agricultural University).",
+      "userId": "USR-725673",
+      "actor": "Dr. Alok Verma",
+      "timestamp": "2026-09-22T14:02:05.686Z"
+    },
+    {
+      "id": "ACT-1790085725673",
+      "type": "USER_REGISTRATION",
+      "title": "New Client Request",
+      "description": "Dr. Ramesh Kumar (Punjab Agricultural University) submitted workspace registration request.",
+      "userId": "USR-725673",
+      "actor": "Dr. Ramesh Kumar",
+      "timestamp": "2026-09-22T14:02:05.673Z"
+    },
+    {
+      "id": "ACT-1790085526722",
+      "type": "ACCESS_REJECTED",
+      "title": "Access Request Declined",
+      "description": "Admin rejected access for Unverified User (Suspicious Corp). Reason: Did not meet institutional verification criteria",
+      "userId": "USR-526719",
+      "actor": "Dr. Alok Verma",
+      "timestamp": "2026-09-22T13:58:46.722Z"
+    },
+    {
+      "id": "ACT-1790085526719",
+      "type": "USER_REGISTRATION",
+      "title": "New Client Request",
+      "description": "Unverified User (Suspicious Corp) submitted workspace registration request.",
+      "userId": "USR-526719",
+      "actor": "Unverified User",
+      "timestamp": "2026-09-22T13:58:46.719Z"
+    },
+    {
+      "id": "ACT-1790085526714",
+      "type": "ACCESS_REVOKED",
+      "title": "Workspace Access Revoked",
+      "description": "Admin revoked workspace access for Dr. Ramesh Kumar (Punjab Agricultural University). Reason: Commercial trial license ended",
+      "userId": "USR-526695",
+      "actor": "Dr. Alok Verma",
+      "timestamp": "2026-09-22T13:58:46.714Z"
+    },
+    {
+      "id": "ACT-1790085526708",
+      "type": "ACCESS_APPROVED",
+      "title": "Workspace Access Approved",
+      "description": "Admin approved full workspace access for Dr. Ramesh Kumar (Punjab Agricultural University).",
+      "userId": "USR-526695",
+      "actor": "Dr. Alok Verma",
+      "timestamp": "2026-09-22T13:58:46.708Z"
+    },
+    {
+      "id": "ACT-1790085526695",
+      "type": "USER_REGISTRATION",
+      "title": "New Client Request",
+      "description": "Dr. Ramesh Kumar (Punjab Agricultural University) submitted workspace registration request.",
+      "userId": "USR-526695",
+      "actor": "Dr. Ramesh Kumar",
+      "timestamp": "2026-09-22T13:58:46.695Z"
+    },
+    {
+      "id": "ACT-1790084743111",
+      "type": "ACCESS_REJECTED",
+      "title": "Access Request Declined",
+      "description": "Admin rejected access for Unverified User (Suspicious Corp). Reason: Did not meet institutional verification criteria",
+      "userId": "USR-743109",
+      "actor": "Dr. Alok Verma",
+      "timestamp": "2026-09-22T13:45:43.111Z"
+    },
+    {
+      "id": "ACT-1790084743109",
+      "type": "USER_REGISTRATION",
+      "title": "New Client Request",
+      "description": "Unverified User (Suspicious Corp) submitted workspace registration request.",
+      "userId": "USR-743109",
+      "actor": "Unverified User",
+      "timestamp": "2026-09-22T13:45:43.109Z"
+    },
+    {
+      "id": "ACT-1790084743104",
+      "type": "ACCESS_REVOKED",
+      "title": "Workspace Access Revoked",
+      "description": "Admin revoked workspace access for Dr. Ramesh Kumar (Punjab Agricultural University). Reason: Commercial trial license ended",
+      "userId": "USR-743088",
+      "actor": "Dr. Alok Verma",
+      "timestamp": "2026-09-22T13:45:43.104Z"
+    },
+    {
+      "id": "ACT-1790084743100",
+      "type": "ACCESS_APPROVED",
+      "title": "Workspace Access Approved",
+      "description": "Admin approved full workspace access for Dr. Ramesh Kumar (Punjab Agricultural University).",
+      "userId": "USR-743088",
+      "actor": "Dr. Alok Verma",
+      "timestamp": "2026-09-22T13:45:43.100Z"
+    },
+    {
+      "id": "ACT-1790084743088",
+      "type": "USER_REGISTRATION",
+      "title": "New Client Request",
+      "description": "Dr. Ramesh Kumar (Punjab Agricultural University) submitted workspace registration request.",
+      "userId": "USR-743088",
+      "actor": "Dr. Ramesh Kumar",
+      "timestamp": "2026-09-22T13:45:43.088Z"
+    },
     {
       "id": "ACT-1790084338887",
       "type": "ACCESS_REJECTED",

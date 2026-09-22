@@ -27,9 +27,9 @@ export const AgroTraceXLogo = ({
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      <div className="flex items-center gap-2 font-bold tracking-tight select-none cursor-pointer group">
-        {/* Brand Icon: Monochrome Seedling Node with white geometric frame */}
-        <div className="flex items-center justify-center rounded-xl bg-white text-black p-1.5 shadow-[0_0_15px_rgba(255,255,255,0.2)] group-hover:shadow-[0_0_25px_rgba(255,255,255,0.4)] group-hover:scale-105 transition-all duration-200">
+      <div className="flex items-center gap-2.5 font-bold tracking-tight select-none cursor-pointer group">
+        {/* Brand Icon: Crisp White Geometric Frame with Seedling Node */}
+        <div className="flex items-center justify-center rounded-xl bg-white text-black p-1.5 shadow-[0_0_15px_rgba(255,255,255,0.25)] group-hover:shadow-[0_0_25px_rgba(255,255,255,0.5)] group-hover:scale-105 transition-all duration-200 shrink-0">
           <svg
             className={iconSizes[size] || iconSizes.md}
             viewBox="0 0 24 24"
@@ -75,7 +75,7 @@ export const AgroTraceXLogo = ({
         </span>
       )}
 
-      {/* Elegant Hover Tooltip (Section 3: Tooltip text: 'AgroTraceX' with smooth fade/scale animation) */}
+      {/* Elegant Hover Tooltip */}
       {showTooltip && (
         <div
           className={`absolute left-0 top-full mt-2 pointer-events-none z-50 px-2.5 py-1 rounded-lg bg-black/90 text-white text-3xs font-mono uppercase tracking-wider border border-white/20 shadow-2xl backdrop-blur-md transition-all duration-200 ${
