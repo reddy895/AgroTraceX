@@ -1,0 +1,272 @@
+{
+  "users": [
+    {
+      "id": "USR-338881",
+      "name": "Unverified User",
+      "email": "reject.client.1790084338878@unverified.org",
+      "phone": "+1 000 000 0000",
+      "organization": "Suspicious Corp",
+      "designation": "Tester",
+      "passwordHash": "password123",
+      "role": "CLIENT",
+      "status": "REJECTED",
+      "reason": "Random reason",
+      "createdAt": "2026-09-22T13:38:58.881Z",
+      "updatedAt": "2026-09-22T13:38:58.887Z"
+    },
+    {
+      "id": "USR-338707",
+      "name": "Dr. Ramesh Kumar",
+      "email": "test.client.1790084338682@agriresearch.org",
+      "phone": "+91 99887 66554",
+      "organization": "Punjab Agricultural University",
+      "designation": "Senior Wheat Breeder",
+      "passwordHash": "secureclientpass",
+      "role": "CLIENT",
+      "status": "REVOKED",
+      "reason": "Evaluating drought resistance lines in Zone 4",
+      "createdAt": "2026-09-22T13:38:58.707Z",
+      "updatedAt": "2026-09-22T13:38:58.870Z"
+    },
+    {
+      "id": "USR-179102",
+      "name": "Suresh Menon",
+      "email": "suresh@keralaseeds.org",
+      "phone": "+91 98470 11223",
+      "organization": "Kerala Seeds Federation",
+      "designation": "R&D Lead",
+      "passwordHash": "secretpassword",
+      "role": "CLIENT",
+      "status": "REVOKED",
+      "reason": "Need paddy cultivar field trial traceability",
+      "createdAt": "2026-09-22T13:36:19.102Z",
+      "updatedAt": "2026-09-22T13:36:37.921Z"
+    },
+    {
+      "id": "ADMIN-001",
+      "name": "Dr. Alok Verma",
+      "email": "admin@agrotracex.com",
+      "phone": "+1 (800) 555-0199",
+      "organization": "AgroTraceX Platform Operations",
+      "designation": "Principal Operations Lead & Administrator",
+      "passwordHash": "admin123",
+      "role": "ADMIN",
+      "status": "APPROVED",
+      "reason": "System Master Administrator",
+      "createdAt": "2026-01-15T08:00:00.000Z",
+      "updatedAt": "2026-01-15T08:00:00.000Z"
+    },
+    {
+      "id": "USR-101",
+      "name": "Dr. Ananya Sen",
+      "email": "ananya.sen@novisagro.com",
+      "phone": "+1 (415) 892-3341",
+      "organization": "Novis AgroSciences Global",
+      "designation": "VP of Plant Genetics & Field R&D",
+      "passwordHash": "client123",
+      "role": "CLIENT",
+      "status": "APPROVED",
+      "reason": "Multi-location hybrid maize and soybean trial oversight across 14 research zones.",
+      "createdAt": "2026-02-10T10:30:00.000Z",
+      "updatedAt": "2026-02-11T14:20:00.000Z"
+    },
+    {
+      "id": "USR-102",
+      "name": "Dr. Arvind Shrivastava",
+      "email": "arvind.shrivastava@agrotracex-demo.com",
+      "phone": "+91 98230 44512",
+      "organization": "Central Cereal Research Institute",
+      "designation": "Lead Agronomist & Cereal Phenotyper",
+      "passwordHash": "client123",
+      "role": "CLIENT",
+      "status": "APPROVED",
+      "reason": "Phenotypic validation and ANOVA trait verification for drought-tolerant wheat lines.",
+      "createdAt": "2026-02-18T11:15:00.000Z",
+      "updatedAt": "2026-02-19T09:40:00.000Z"
+    },
+    {
+      "id": "USR-103",
+      "name": "Marcus Vance",
+      "email": "marcus.v@ceresgenetics.io",
+      "phone": "+1 (515) 772-9014",
+      "organization": "Ceres Plant Genetics Corp",
+      "designation": "Director of Field Agronomy",
+      "passwordHash": "client123",
+      "role": "CLIENT",
+      "status": "PENDING",
+      "reason": "Evaluating AgroTraceX for upcoming 2026 Kharif-Rabi commercial seed registration trials.",
+      "createdAt": "2026-09-21T14:22:00.000Z",
+      "updatedAt": "2026-09-21T14:22:00.000Z"
+    },
+    {
+      "id": "USR-104",
+      "name": "Rajesh Patel",
+      "email": "r.patel@gujaratagri.org",
+      "phone": "+91 94250 88712",
+      "organization": "Gujarat Bio-Agricultural Alliance",
+      "designation": "Senior Trials Coordinator",
+      "passwordHash": "client123",
+      "role": "CLIENT",
+      "status": "PENDING",
+      "reason": "Require chain-of-custody seed lot tracking and sub-meter GPS plot boundary verification.",
+      "createdAt": "2026-09-22T09:05:00.000Z",
+      "updatedAt": "2026-09-22T09:05:00.000Z"
+    },
+    {
+      "id": "USR-105",
+      "name": "David K. O'Connor",
+      "email": "david@unknownfirm.xyz",
+      "phone": "+1 (202) 555-0143",
+      "organization": "Global Seed Brokerage Ltd",
+      "designation": "Independent Broker",
+      "passwordHash": "client123",
+      "role": "CLIENT",
+      "status": "REJECTED",
+      "reason": "Personal email domain with unverified organization entity.",
+      "createdAt": "2026-09-19T16:10:00.000Z",
+      "updatedAt": "2026-09-20T11:00:00.000Z"
+    },
+    {
+      "id": "USR-106",
+      "name": "Alex Mercer",
+      "email": "alex@legacytrials.com",
+      "phone": "+1 (612) 441-9923",
+      "organization": "Legacy Crop Analytics",
+      "designation": "Operations Specialist",
+      "passwordHash": "client123",
+      "role": "CLIENT",
+      "status": "REVOKED",
+      "reason": "Commercial trial license agreement expired without renewal.",
+      "createdAt": "2026-03-01T08:00:00.000Z",
+      "updatedAt": "2026-09-18T17:30:00.000Z"
+    }
+  ],
+  "activities": [
+    {
+      "id": "ACT-1790084338887",
+      "type": "ACCESS_REJECTED",
+      "title": "Access Request Declined",
+      "description": "Admin rejected access for Unverified User (Suspicious Corp). Reason: Did not meet institutional verification criteria",
+      "userId": "USR-338881",
+      "actor": "Dr. Alok Verma",
+      "timestamp": "2026-09-22T13:38:58.887Z"
+    },
+    {
+      "id": "ACT-1790084338881",
+      "type": "USER_REGISTRATION",
+      "title": "New Client Request",
+      "description": "Unverified User (Suspicious Corp) submitted workspace registration request.",
+      "userId": "USR-338881",
+      "actor": "Unverified User",
+      "timestamp": "2026-09-22T13:38:58.881Z"
+    },
+    {
+      "id": "ACT-1790084338870",
+      "type": "ACCESS_REVOKED",
+      "title": "Workspace Access Revoked",
+      "description": "Admin revoked workspace access for Dr. Ramesh Kumar (Punjab Agricultural University). Reason: Commercial trial license ended",
+      "userId": "USR-338707",
+      "actor": "Dr. Alok Verma",
+      "timestamp": "2026-09-22T13:38:58.870Z"
+    },
+    {
+      "id": "ACT-1790084338854",
+      "type": "ACCESS_APPROVED",
+      "title": "Workspace Access Approved",
+      "description": "Admin approved full workspace access for Dr. Ramesh Kumar (Punjab Agricultural University).",
+      "userId": "USR-338707",
+      "actor": "Dr. Alok Verma",
+      "timestamp": "2026-09-22T13:38:58.853Z"
+    },
+    {
+      "id": "ACT-1790084338707",
+      "type": "USER_REGISTRATION",
+      "title": "New Client Request",
+      "description": "Dr. Ramesh Kumar (Punjab Agricultural University) submitted workspace registration request.",
+      "userId": "USR-338707",
+      "actor": "Dr. Ramesh Kumar",
+      "timestamp": "2026-09-22T13:38:58.707Z"
+    },
+    {
+      "id": "ACT-1790084197921",
+      "type": "ACCESS_REVOKED",
+      "title": "Workspace Access Revoked",
+      "description": "Admin revoked workspace access for Suresh Menon (Kerala Seeds Federation). Reason: Administrative revocation",
+      "userId": "USR-179102",
+      "actor": "Dr. Alok Verma",
+      "timestamp": "2026-09-22T13:36:37.921Z"
+    },
+    {
+      "id": "ACT-1790084187978",
+      "type": "ACCESS_APPROVED",
+      "title": "Workspace Access Approved",
+      "description": "Admin approved full workspace access for Suresh Menon (Kerala Seeds Federation).",
+      "userId": "USR-179102",
+      "actor": "Dr. Alok Verma",
+      "timestamp": "2026-09-22T13:36:27.978Z"
+    },
+    {
+      "id": "ACT-1790084179102",
+      "type": "USER_REGISTRATION",
+      "title": "New Client Request",
+      "description": "Suresh Menon (Kerala Seeds Federation) submitted workspace registration request.",
+      "userId": "USR-179102",
+      "actor": "Suresh Menon",
+      "timestamp": "2026-09-22T13:36:19.102Z"
+    },
+    {
+      "id": "ACT-001",
+      "type": "USER_REGISTRATION",
+      "title": "New Access Request",
+      "description": "Rajesh Patel (Gujarat Bio-Agricultural Alliance) submitted a workspace access request.",
+      "userId": "USR-104",
+      "actor": "Rajesh Patel",
+      "timestamp": "2026-09-22T09:05:00.000Z"
+    },
+    {
+      "id": "ACT-002",
+      "type": "USER_REGISTRATION",
+      "title": "New Access Request",
+      "description": "Marcus Vance (Ceres Plant Genetics Corp) submitted a workspace access request.",
+      "userId": "USR-103",
+      "actor": "Marcus Vance",
+      "timestamp": "2026-09-21T14:22:00.000Z"
+    },
+    {
+      "id": "ACT-003",
+      "type": "ACCESS_REJECTED",
+      "title": "Access Request Declined",
+      "description": "David K. O'Connor (Global Seed Brokerage Ltd) request rejected by Administrator.",
+      "userId": "USR-105",
+      "actor": "Dr. Alok Verma",
+      "timestamp": "2026-09-20T11:00:00.000Z"
+    },
+    {
+      "id": "ACT-004",
+      "type": "ACCESS_REVOKED",
+      "title": "Workspace Access Revoked",
+      "description": "Alex Mercer (Legacy Crop Analytics) access revoked due to contract expiration.",
+      "userId": "USR-106",
+      "actor": "Dr. Alok Verma",
+      "timestamp": "2026-09-18T17:30:00.000Z"
+    },
+    {
+      "id": "ACT-005",
+      "type": "ACCESS_APPROVED",
+      "title": "Workspace Access Approved",
+      "description": "Dr. Arvind Shrivastava (Central Cereal Research Institute) approved for full workspace access.",
+      "userId": "USR-102",
+      "actor": "Dr. Alok Verma",
+      "timestamp": "2026-02-19T09:40:00.000Z"
+    },
+    {
+      "id": "ACT-006",
+      "type": "ACCESS_APPROVED",
+      "title": "Workspace Access Approved",
+      "description": "Dr. Ananya Sen (Novis AgroSciences Global) approved for full workspace access.",
+      "userId": "USR-101",
+      "actor": "Dr. Alok Verma",
+      "timestamp": "2026-02-11T14:20:00.000Z"
+    }
+  ]
+}

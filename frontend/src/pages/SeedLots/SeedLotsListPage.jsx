@@ -51,8 +51,8 @@ export const SeedLotsListPage = () => {
       key: 'id',
       render: (row) => (
         <div>
-          <span className="font-mono font-bold text-xs text-[#0F4A2A] block">{row.id}</span>
-          <span className="text-3xs text-slate-500 font-mono">Batch: {row.batchNumber}</span>
+          <span className="font-mono font-bold text-xs text-white block">{row.id}</span>
+          <span className="text-3xs text-neutral-400 font-mono">Batch: {row.batchNumber}</span>
         </div>
       )
     },
@@ -61,8 +61,8 @@ export const SeedLotsListPage = () => {
       key: 'crop',
       render: (row) => (
         <div>
-          <span className="font-semibold text-xs text-slate-900 block">{row.crop}</span>
-          <span className="text-3xs text-slate-600 block">{row.variety}</span>
+          <span className="font-semibold text-xs text-white block">{row.crop}</span>
+          <span className="text-3xs text-neutral-400 block">{row.variety}</span>
         </div>
       )
     },
@@ -70,7 +70,7 @@ export const SeedLotsListPage = () => {
       header: 'Company',
       key: 'companyName',
       render: (row) => (
-        <span className="text-xs text-slate-800 font-medium truncate max-w-[150px] block">
+        <span className="text-xs text-neutral-300 font-medium truncate max-w-[150px] block">
           {row.companyName}
         </span>
       )
@@ -79,9 +79,9 @@ export const SeedLotsListPage = () => {
       header: 'Germination & Purity',
       key: 'germinationRate',
       render: (row) => (
-        <div className="text-3xs font-mono text-slate-700 space-y-0.5">
-          <div className="text-emerald-700 font-bold">Germ: {row.germinationRate}%</div>
-          <div className="text-slate-500">Purity: {row.purityPercentage}%</div>
+        <div className="text-3xs font-mono text-neutral-300 space-y-0.5">
+          <div className="text-white font-bold">Germ: {row.germinationRate}%</div>
+          <div className="text-neutral-400">Purity: {row.purityPercentage}%</div>
         </div>
       )
     },
@@ -89,22 +89,22 @@ export const SeedLotsListPage = () => {
       header: 'Quantity',
       key: 'quantityKg',
       render: (row) => (
-        <span className="font-mono text-xs text-slate-800 font-semibold">{row.quantityKg} kg</span>
+        <span className="font-mono text-xs text-white font-bold">{row.quantityKg} kg</span>
       )
     },
     {
       header: 'Assigned Trials',
       key: 'assignedTrials',
       render: (row) => (
-        <div className="flex items-center gap-1 flex-wrap">
+        <div className="flex items-center gap-1.5 flex-wrap">
           {row.assignedTrials.map((tId) => (
             <span
               key={tId}
               onClick={(e) => {
                 e.stopPropagation();
-                navigate(`/trials/${tId}`);
+                navigate(`/platform/trials/${tId}`);
               }}
-              className="px-1.5 py-0.5 rounded bg-slate-100 hover:bg-emerald-100 hover:text-[#0F4A2A] text-slate-700 font-mono text-3xs font-semibold cursor-pointer transition-colors"
+              className="px-2 py-0.5 rounded-full bg-white/10 hover:bg-white hover:text-black text-neutral-300 font-mono text-3xs font-semibold cursor-pointer transition-all border border-white/15"
             >
               {tId}
             </span>
@@ -137,15 +137,15 @@ export const SeedLotsListPage = () => {
 
   return (
     <div className="space-y-6">
-      <Breadcrumb items={[{ label: 'Seed Lots' }]} />
+      <Breadcrumb items={[{ label: 'Platform', to: '/platform' }, { label: 'Seed Lots' }]} />
 
       {/* Page Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900">
+          <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white">
             Seed Lots & Germplasm Traceability
           </h1>
-          <p className="text-xs sm:text-sm text-slate-500 mt-1">
+          <p className="text-xs sm:text-sm text-neutral-400 mt-1">
             Track certified breeding parent lots, genetic traits, and trial chain of custody.
           </p>
         </div>
@@ -164,7 +164,7 @@ export const SeedLotsListPage = () => {
       <SeedToResultJourney />
 
       {/* Filters Bar */}
-      <div className="bg-white p-4 rounded-xl border border-slate-200/90 shadow-2xs flex flex-col sm:flex-row items-center justify-between gap-3">
+      <div className="ag-glass p-4 rounded-2xl border border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3">
         <div className="w-full sm:w-80">
           <Input
             placeholder="Search lot ID, variety, batch..."
@@ -201,7 +201,7 @@ export const SeedLotsListPage = () => {
         width="max-w-xl"
         footer={
           <div className="flex items-center justify-between w-full">
-            <span className="text-2xs font-mono text-slate-500">
+            <span className="text-3xs font-mono text-neutral-400">
               Cert: {selectedLot?.certificationId}
             </span>
             <Button
@@ -215,38 +215,38 @@ export const SeedLotsListPage = () => {
         }
       >
         {selectedLot && (
-          <div className="space-y-6 text-xs text-slate-700">
+          <div className="space-y-6 text-xs text-neutral-300">
             {/* Quick Metrics */}
             <div className="grid grid-cols-2 gap-3">
-              <div className="bg-slate-50 p-3 rounded-lg border border-slate-200">
-                <span className="text-3xs uppercase font-bold text-slate-400 block">
+              <div className="bg-white/[0.03] p-3.5 rounded-xl border border-white/[0.08]">
+                <span className="text-3xs uppercase font-mono font-bold text-neutral-500 block">
                   Batch Number
                 </span>
-                <span className="font-mono font-bold text-slate-900 mt-0.5 block">
+                <span className="font-mono font-bold text-white mt-1 block">
                   {selectedLot.batchNumber}
                 </span>
               </div>
-              <div className="bg-slate-50 p-3 rounded-lg border border-slate-200">
-                <span className="text-3xs uppercase font-bold text-slate-400 block">
+              <div className="bg-white/[0.03] p-3.5 rounded-xl border border-white/[0.08]">
+                <span className="text-3xs uppercase font-mono font-bold text-neutral-500 block">
                   Germination Rate
                 </span>
-                <span className="font-mono font-bold text-emerald-700 mt-0.5 block">
+                <span className="font-mono font-bold text-white mt-1 block">
                   {selectedLot.germinationRate}% (Tested)
                 </span>
               </div>
-              <div className="bg-slate-50 p-3 rounded-lg border border-slate-200">
-                <span className="text-3xs uppercase font-bold text-slate-400 block">
+              <div className="bg-white/[0.03] p-3.5 rounded-xl border border-white/[0.08]">
+                <span className="text-3xs uppercase font-mono font-bold text-neutral-500 block">
                   Physical Purity
                 </span>
-                <span className="font-mono font-bold text-slate-900 mt-0.5 block">
+                <span className="font-mono font-bold text-white mt-1 block">
                   {selectedLot.purityPercentage}%
                 </span>
               </div>
-              <div className="bg-slate-50 p-3 rounded-lg border border-slate-200">
-                <span className="text-3xs uppercase font-bold text-slate-400 block">
+              <div className="bg-white/[0.03] p-3.5 rounded-xl border border-white/[0.08]">
+                <span className="text-3xs font-mono uppercase font-bold text-neutral-500 block">
                   Available Quantity
                 </span>
-                <span className="font-mono font-bold text-slate-900 mt-0.5 block">
+                <span className="font-mono font-bold text-white mt-1 block">
                   {selectedLot.quantityKg} kg
                 </span>
               </div>
@@ -254,37 +254,37 @@ export const SeedLotsListPage = () => {
 
             {/* Genetic Traits & Seed Treatment */}
             <div className="space-y-3">
-              <h4 className="text-xs font-bold uppercase tracking-wider text-slate-900">
+              <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-white">
                 Genetics & Chemical Treatment
               </h4>
-              <div className="bg-emerald-50/70 p-3 rounded-lg border border-emerald-200">
-                <span className="text-3xs uppercase font-bold text-emerald-800 block">
+              <div className="bg-white/[0.03] p-3.5 rounded-xl border border-white/[0.08]">
+                <span className="text-3xs font-mono uppercase font-bold text-neutral-400 block">
                   Target Genetic Traits
                 </span>
-                <p className="font-medium text-emerald-900 mt-0.5">{selectedLot.geneticTraits}</p>
+                <p className="font-medium text-white mt-1">{selectedLot.geneticTraits}</p>
               </div>
 
-              <div className="bg-slate-50 p-3 rounded-lg border border-slate-200">
-                <span className="text-3xs uppercase font-bold text-slate-500 block">
+              <div className="bg-white/[0.03] p-3.5 rounded-xl border border-white/[0.08]">
+                <span className="text-3xs font-mono uppercase font-bold text-neutral-400 block">
                   Certified Seed Coating / Treatment
                 </span>
-                <p className="text-slate-800 mt-0.5 font-mono">{selectedLot.seedTreatment}</p>
+                <p className="text-neutral-200 mt-1 font-mono">{selectedLot.seedTreatment}</p>
               </div>
             </div>
 
             {/* Trial Requirements */}
             <div className="space-y-2">
-              <h4 className="text-xs font-bold uppercase tracking-wider text-slate-900">
+              <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-white">
                 Trial Protocol Requirements
               </h4>
-              <p className="bg-slate-50 p-3 rounded-lg border border-slate-200 leading-relaxed">
+              <p className="bg-white/[0.02] p-3.5 rounded-xl border border-white/[0.06] leading-relaxed text-neutral-300">
                 {selectedLot.trialRequirements}
               </p>
             </div>
 
             {/* Linked Trials */}
-            <div className="space-y-2 pt-2 border-t border-slate-100">
-              <h4 className="text-xs font-bold uppercase tracking-wider text-slate-900">
+            <div className="space-y-2 pt-2 border-t border-white/[0.08]">
+              <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-white">
                 Linked Active Trials ({selectedLot.assignedTrials.length})
               </h4>
               <div className="space-y-2">
@@ -293,16 +293,16 @@ export const SeedLotsListPage = () => {
                   return (
                     <div
                       key={tId}
-                      onClick={() => navigate(`/trials/${tId}`)}
-                      className="flex items-center justify-between p-3 rounded-lg bg-slate-50 hover:bg-emerald-50 border border-slate-200 hover:border-emerald-300 transition-all cursor-pointer group"
+                      onClick={() => navigate(`/platform/trials/${tId}`)}
+                      className="flex items-center justify-between p-3.5 rounded-xl bg-white/[0.02] hover:bg-white/[0.08] border border-white/[0.08] hover:border-white/20 transition-all cursor-pointer group"
                     >
                       <div>
-                        <span className="font-mono font-bold text-[#0F4A2A] block">{tId}</span>
-                        <span className="text-slate-600 block mt-0.5">
+                        <span className="font-mono font-bold text-white block">{tId}</span>
+                        <span className="text-neutral-400 text-xs block mt-0.5">
                           {tr ? tr.title : 'Field Evaluation Trial'}
                         </span>
                       </div>
-                      <ExternalLink className="w-4 h-4 text-slate-400 group-hover:text-[#0F4A2A] shrink-0" />
+                      <ExternalLink className="w-4 h-4 text-neutral-500 group-hover:text-white shrink-0" />
                     </div>
                   );
                 })}

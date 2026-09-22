@@ -16,17 +16,13 @@ import { mockTrials as initialTrials } from '../../data/trials';
 import {
   Plus,
   Search,
-  Filter,
   LayoutGrid,
   List,
-  Eye,
   Archive,
-  Edit,
   Calendar,
   User,
   MapPin,
-  ChevronRight,
-  Sparkles
+  ChevronRight
 } from 'lucide-react';
 
 export const TrialsListPage = () => {
@@ -105,9 +101,9 @@ export const TrialsListPage = () => {
       key: 'id',
       render: (row) => (
         <div>
-          <span className="font-mono font-bold text-xs text-[#0F4A2A] block">{row.id}</span>
-          <span className="text-xs font-semibold text-slate-900 block mt-0.5">{row.crop}</span>
-          <span className="text-3xs text-slate-500 truncate max-w-[160px] block">{row.variety}</span>
+          <span className="font-mono font-bold text-xs text-white block">{row.id}</span>
+          <span className="text-xs font-semibold text-neutral-200 block mt-0.5">{row.crop}</span>
+          <span className="text-3xs text-neutral-400 truncate max-w-[160px] block">{row.variety}</span>
         </div>
       )
     },
@@ -115,9 +111,9 @@ export const TrialsListPage = () => {
       header: 'Seed Lot',
       key: 'seedLotId',
       render: (row) => (
-        <div className="text-xs font-mono text-slate-700">
+        <div className="text-xs font-mono text-neutral-300">
           <div>{row.seedLotId}</div>
-          <span className="text-3xs text-slate-400 font-sans">Batch: {row.seedLotBatch}</span>
+          <span className="text-3xs text-neutral-500 font-sans">Batch: {row.seedLotBatch}</span>
         </div>
       )
     },
@@ -125,7 +121,7 @@ export const TrialsListPage = () => {
       header: 'Company',
       key: 'companyName',
       render: (row) => (
-        <span className="text-xs text-slate-800 font-medium truncate max-w-[140px] block">
+        <span className="text-xs text-neutral-300 font-medium truncate max-w-[140px] block">
           {row.companyName}
         </span>
       )
@@ -135,8 +131,8 @@ export const TrialsListPage = () => {
       key: 'farmerName',
       render: (row) => (
         <div className="text-xs">
-          <span className="font-medium text-slate-900 block">{row.farmerName}</span>
-          <span className="text-3xs text-slate-500 block truncate max-w-[140px]">{row.location}</span>
+          <span className="font-medium text-white block">{row.farmerName}</span>
+          <span className="text-3xs text-neutral-400 block truncate max-w-[140px] font-mono">{row.location}</span>
         </div>
       )
     },
@@ -145,14 +141,14 @@ export const TrialsListPage = () => {
       key: 'currentStage',
       render: (row) => (
         <div className="w-28">
-          <div className="flex items-center justify-between text-2xs mb-1">
-            <span className="font-semibold text-slate-800">{row.currentStage}</span>
-            <span className="text-slate-500 font-mono">{row.progressPercentage}%</span>
+          <div className="flex items-center justify-between text-3xs font-mono mb-1 text-neutral-300">
+            <span>{row.currentStage}</span>
+            <span>{row.progressPercentage}%</span>
           </div>
-          <div className="w-full h-1.5 bg-slate-100 rounded-full overflow-hidden">
+          <div className="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
             <div
-              className={`h-full rounded-full ${
-                row.status === 'Delayed' ? 'bg-amber-500' : 'bg-[#0F4A2A]'
+              className={`h-full rounded-full transition-all duration-300 ${
+                row.progressPercentage === 100 ? 'bg-white shadow-[0_0_8px_#ffffff]' : 'bg-neutral-300'
               }`}
               style={{ width: `${row.progressPercentage}%` }}
             />
@@ -164,9 +160,9 @@ export const TrialsListPage = () => {
       header: 'Dates',
       key: 'dates',
       render: (row) => (
-        <div className="text-3xs text-slate-600 font-mono space-y-0.5">
+        <div className="text-3xs text-neutral-400 font-mono space-y-0.5">
           <div>Start: {row.startDate}</div>
-          <div className="text-slate-400">Harvest: {row.expectedHarvest}</div>
+          <div>Harvest: {row.expectedHarvest}</div>
         </div>
       )
     },
@@ -179,13 +175,13 @@ export const TrialsListPage = () => {
       header: 'Actions',
       key: 'actions',
       render: (row) => (
-        <div className="flex items-center gap-1">
+        <div className="flex items-center gap-1.5">
           <Button
             variant="outline"
             size="sm"
             onClick={(e) => {
               e.stopPropagation();
-              navigate(`/trials/${row.id}`);
+              navigate(`/platform/trials/${row.id}`);
             }}
             title="Inspect Trial"
           >
@@ -200,7 +196,7 @@ export const TrialsListPage = () => {
             }}
             title="Archive Trial"
           >
-            <Archive className="w-3.5 h-3.5 text-slate-400 hover:text-red-600" />
+            <Archive className="w-3.5 h-3.5 text-neutral-500 hover:text-white" />
           </Button>
         </div>
       )
@@ -209,20 +205,20 @@ export const TrialsListPage = () => {
 
   return (
     <div className="space-y-6">
-      <Breadcrumb items={[{ label: 'Trials' }]} />
+      <Breadcrumb items={[{ label: 'Platform', to: '/platform' }, { label: 'Field Trials' }]} />
 
       {/* Page Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900">
+          <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white">
             Field Trials
           </h1>
-          <p className="text-xs sm:text-sm text-slate-500 mt-1">
+          <p className="text-xs sm:text-sm text-neutral-400 mt-1">
             Manage multi-location experimental plots, phenotyping protocols, and yield verification.
           </p>
         </div>
 
-        <div className="flex items-center gap-2 self-start sm:self-auto">
+        <div className="flex items-center gap-2.5 self-start sm:self-auto">
           <Button
             variant="primary"
             size="md"
@@ -238,7 +234,7 @@ export const TrialsListPage = () => {
       <Tabs tabs={tabs} activeTab={activeTab} onChange={setActiveTab} />
 
       {/* Filters Bar */}
-      <div className="bg-white p-4 rounded-xl border border-slate-200/90 shadow-2xs space-y-3">
+      <div className="ag-glass p-4 rounded-2xl border border-white/10 space-y-3">
         <div className="flex flex-col md:flex-row items-center justify-between gap-3">
           <div className="w-full md:w-80">
             <Input
@@ -266,13 +262,13 @@ export const TrialsListPage = () => {
               options={['Central India', 'Northern Plains', 'Western Deccan', 'Southern']}
             />
 
-            <div className="h-6 w-px bg-slate-200 mx-1 hidden sm:block" />
+            <div className="h-6 w-px bg-white/10 mx-1 hidden sm:block" />
 
-            <div className="flex items-center rounded-lg border border-slate-200 p-0.5 bg-slate-50 shrink-0">
+            <div className="flex items-center rounded-xl border border-white/10 p-0.5 bg-white/[0.04] shrink-0">
               <button
                 onClick={() => setViewMode('table')}
-                className={`p-1.5 rounded-md transition-colors cursor-pointer ${
-                  viewMode === 'table' ? 'bg-white shadow-xs text-slate-900' : 'text-slate-400 hover:text-slate-700'
+                className={`p-1.5 rounded-lg transition-colors cursor-pointer ${
+                  viewMode === 'table' ? 'bg-white text-black font-bold' : 'text-neutral-400 hover:text-white'
                 }`}
                 title="Table view"
               >
@@ -280,8 +276,8 @@ export const TrialsListPage = () => {
               </button>
               <button
                 onClick={() => setViewMode('grid')}
-                className={`p-1.5 rounded-md transition-colors cursor-pointer ${
-                  viewMode === 'grid' ? 'bg-white shadow-xs text-slate-900' : 'text-slate-400 hover:text-slate-700'
+                className={`p-1.5 rounded-lg transition-colors cursor-pointer ${
+                  viewMode === 'grid' ? 'bg-white text-black font-bold' : 'text-neutral-400 hover:text-white'
                 }`}
                 title="Grid view"
               >
@@ -304,59 +300,59 @@ export const TrialsListPage = () => {
               Create Trial
             </Button>
           }
-          onRowClick={(row) => navigate(`/trials/${row.id}`)}
+          onRowClick={(row) => navigate(`/platform/trials/${row.id}`)}
         />
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {filteredTrials.length === 0 ? (
-            <div className="col-span-full bg-white p-12 rounded-xl border border-slate-200 text-center">
-              <p className="text-slate-500 text-sm">No trials matching your filter criteria.</p>
+            <div className="col-span-full ag-glass p-12 rounded-2xl border border-white/10 text-center">
+              <p className="text-neutral-400 text-xs font-mono">No trials matching your filter criteria.</p>
             </div>
           ) : (
             filteredTrials.map((trial) => (
               <div
                 key={trial.id}
-                onClick={() => navigate(`/trials/${trial.id}`)}
-                className="bg-white border border-slate-200/90 rounded-xl p-5 shadow-xs hover:shadow-md hover:border-slate-300 transition-all cursor-pointer flex flex-col justify-between"
+                onClick={() => navigate(`/platform/trials/${trial.id}`)}
+                className="ag-glass rounded-2xl p-5 border border-white/10 hover:border-white/25 transition-all cursor-pointer flex flex-col justify-between group"
               >
                 <div>
                   <div className="flex items-start justify-between gap-2">
-                    <span className="font-mono text-xs font-bold text-[#0F4A2A] bg-emerald-50 px-2 py-0.5 rounded border border-emerald-100">
+                    <span className="font-mono text-xs font-bold text-white bg-white/10 px-2.5 py-0.5 rounded-full border border-white/15">
                       {trial.id}
                     </span>
                     <StatusBadge status={trial.status} />
                   </div>
 
-                  <h3 className="text-base font-bold text-slate-900 mt-2.5 leading-snug">
-                    {trial.crop} <span className="font-normal text-slate-600">({trial.variety})</span>
+                  <h3 className="text-base font-bold text-white mt-3 leading-snug">
+                    {trial.crop} <span className="font-normal text-neutral-400">({trial.variety})</span>
                   </h3>
-                  <p className="text-2xs text-slate-500 mt-0.5">{trial.companyName}</p>
+                  <p className="text-3xs font-mono text-neutral-400 mt-0.5">{trial.companyName}</p>
 
-                  <div className="mt-4 pt-3 border-t border-slate-100 space-y-2 text-xs text-slate-600">
-                    <div className="flex items-center gap-1.5 truncate">
-                      <User className="w-3.5 h-3.5 text-slate-400 shrink-0" />
-                      <span>Farmer: <strong>{trial.farmerName}</strong></span>
+                  <div className="mt-4 pt-3 border-t border-white/[0.06] space-y-2 text-xs font-mono text-neutral-400">
+                    <div className="flex items-center gap-2 truncate">
+                      <User className="w-3.5 h-3.5 text-neutral-500 shrink-0" />
+                      <span>Farmer: <strong className="text-white font-normal">{trial.farmerName}</strong></span>
                     </div>
-                    <div className="flex items-center gap-1.5 truncate">
-                      <MapPin className="w-3.5 h-3.5 text-slate-400 shrink-0" />
+                    <div className="flex items-center gap-2 truncate">
+                      <MapPin className="w-3.5 h-3.5 text-neutral-500 shrink-0" />
                       <span>{trial.location} ({trial.trialAreaHa} Ha)</span>
                     </div>
-                    <div className="flex items-center gap-1.5 truncate">
-                      <Calendar className="w-3.5 h-3.5 text-slate-400 shrink-0" />
+                    <div className="flex items-center gap-2 truncate">
+                      <Calendar className="w-3.5 h-3.5 text-neutral-500 shrink-0" />
                       <span>Harvest: {trial.expectedHarvest}</span>
                     </div>
                   </div>
                 </div>
 
-                <div className="mt-5 pt-3 border-t border-slate-100">
-                  <div className="flex items-center justify-between text-2xs mb-1.5">
-                    <span className="font-semibold text-slate-800">Stage: {trial.currentStage}</span>
-                    <span className="font-mono text-slate-500 font-bold">{trial.progressPercentage}%</span>
+                <div className="mt-5 pt-3 border-t border-white/[0.06]">
+                  <div className="flex items-center justify-between text-3xs font-mono mb-1.5 text-neutral-400">
+                    <span>Stage: {trial.currentStage}</span>
+                    <span className="text-white font-bold">{trial.progressPercentage}%</span>
                   </div>
-                  <div className="w-full h-1.5 bg-slate-100 rounded-full overflow-hidden">
+                  <div className="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
                     <div
-                      className={`h-full rounded-full ${
-                        trial.status === 'Delayed' ? 'bg-amber-500' : 'bg-[#0F4A2A]'
+                      className={`h-full rounded-full transition-all duration-300 ${
+                        trial.progressPercentage === 100 ? 'bg-white shadow-[0_0_8px_#ffffff]' : 'bg-neutral-300'
                       }`}
                       style={{ width: `${trial.progressPercentage}%` }}
                     />
