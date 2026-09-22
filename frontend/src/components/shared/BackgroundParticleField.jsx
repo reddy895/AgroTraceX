@@ -15,10 +15,10 @@ export const BackgroundParticleField = () => {
     let width = (canvas.width = window.innerWidth);
     let height = (canvas.height = window.innerHeight);
 
-    // Responsive particle count
+    // Responsive particle count (minimal, non-distracting)
     const isMobile = window.innerWidth < 768;
     const isTablet = window.innerWidth >= 768 && window.innerWidth < 1024;
-    const count = isMobile ? 65 : isTablet ? 120 : 210;
+    const count = isMobile ? 25 : isTablet ? 45 : 75;
     const interactionRadius = isMobile ? 0 : isTablet ? 110 : 150;
 
     // Initialize particles
