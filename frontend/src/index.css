@@ -1,52 +1,80 @@
 @import "tailwindcss";
 
 @theme {
-  --color-slate-50: #f8f5eb;
-  --color-slate-100: #f0ecdf;
-  --color-slate-200: #ded9c9;
-  --color-slate-300: #c8c1ad;
-  --color-slate-400: #9b987f;
-  --color-slate-500: #747765;
-  --color-slate-600: #5b624f;
-  --color-slate-700: #454d3f;
-  --color-slate-800: #30382d;
-  --color-slate-900: #20291f;
-  --color-emerald-50: #edf3e6;
-  --color-emerald-100: #dce8d1;
-  --color-emerald-200: #c3d6b5;
-  --color-emerald-500: #758f58;
-  --color-emerald-600: #607c47;
-  --color-emerald-700: #4e693a;
-  --color-emerald-800: #405832;
-  --color-emerald-900: #314528;
-  --color-amber-50: #fbf1d9;
-  --color-amber-500: #b4863c;
-  --color-red-500: #b85c4e;
-  --color-red-600: #a44e43;
+  --color-slate-50: #0a0a0a;
+  --color-slate-100: #141414;
+  --color-slate-200: #222222;
+  --color-slate-300: #333333;
+  --color-slate-400: #737373;
+  --color-slate-500: #a3a3a3;
+  --color-slate-600: #d4d4d4;
+  --color-slate-700: #e5e5e5;
+  --color-slate-800: #f5f5f5;
+  --color-slate-900: #ffffff;
+  --color-slate-950: #000000;
+
+  /* Map colored accents strictly to neutral monochrome levels */
+  --color-emerald-50: #121212;
+  --color-emerald-100: #1e1e1e;
+  --color-emerald-200: #2e2e2e;
+  --color-emerald-300: #525252;
+  --color-emerald-400: #737373;
+  --color-emerald-500: #a3a3a3;
+  --color-emerald-600: #d4d4d4;
+  --color-emerald-700: #e5e5e5;
+  --color-emerald-800: #f5f5f5;
+  --color-emerald-900: #ffffff;
+
+  --color-blue-50: #121212;
+  --color-blue-100: #1e1e1e;
+  --color-blue-500: #737373;
+  --color-blue-600: #a3a3a3;
+  --color-blue-700: #e5e5e5;
+  --color-blue-800: #f5f5f5;
+
+  --color-amber-50: #141414;
+  --color-amber-100: #222222;
+  --color-amber-500: #a3a3a3;
+  --color-amber-600: #d4d4d4;
+  --color-amber-700: #f5f5f5;
+  --color-amber-800: #ffffff;
+
+  --color-red-50: #141414;
+  --color-red-100: #222222;
+  --color-red-500: #a3a3a3;
+  --color-red-600: #d4d4d4;
+  --color-red-700: #f5f5f5;
+  --color-red-800: #ffffff;
 }
 
 @layer base {
   :root {
-    --brand-primary: #556d3f;
-    --brand-primary-hover: #405832;
-    --brand-dark: #20291f;
-    --brand-surface: #fffdf7;
-    --brand-bg: #f8f5eb;
-    --brand-border: #ded9c9;
+    --brand-primary: #ffffff;
+    --brand-primary-hover: #d4d4d4;
+    --brand-dark: #000000;
+    --brand-surface: rgba(255, 255, 255, 0.035);
+    --brand-bg: #030303;
+    --brand-border: rgba(255, 255, 255, 0.08);
+  }
+
+  * {
+    border-color: rgba(255, 255, 255, 0.08);
   }
 
   body {
-    font-family: 'Avenir Next', 'Trebuchet MS', sans-serif;
-    background-color: var(--brand-bg);
-    color: #30382d;
-    letter-spacing: 0.008em;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #030303;
+    color: #f5f5f5;
+    letter-spacing: -0.011em;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Avenir Next', 'Trebuchet MS', sans-serif;
-    letter-spacing: -0.012em;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    letter-spacing: -0.025em;
+    color: #ffffff;
   }
 
   code, pre, .font-mono {
@@ -54,59 +82,81 @@
   }
 }
 
-/* Custom subtle scrollbar */
+/* Custom subtle dark scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
 }
 
 ::-webkit-scrollbar-track {
-  background: transparent;
+  background: #050505;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #c8c1ad;
+  background: rgba(255, 255, 255, 0.15);
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #9b987f;
+  background: rgba(255, 255, 255, 0.3);
 }
 
-/* Clean utility classes */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Premium Monochrome Glassmorphic Utilities */
+.ag-glass {
+  background: rgba(255, 255, 255, 0.035);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+}
+
+.ag-glass-card {
+  background: rgba(255, 255, 255, 0.035);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.25rem;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ag-glass-card:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.16);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.6), 0 0 20px 0 rgba(255, 255, 255, 0.04);
+}
+
 .ag-card {
-  background: #fffdf7;
-  border: 1px solid #ded9c9;
-  border-radius: 0.625rem;
-  box-shadow: 0 1px 3px rgba(57, 65, 45, 0.05);
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.25rem;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
 }
 
-.ag-badge-green {
-  background-color: #DCFCE7;
-  color: #166534;
-  border: 1px solid #BBF7D0;
+.ag-glass-nav {
+  background: rgba(10, 10, 10, 0.75);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 30px rgba(255, 255, 255, 0.03);
 }
 
-.ag-badge-blue {
-  background-color: #DBEAFE;
-  color: #1E40AF;
-  border: 1px solid #BFDBFE;
+/* Subtle glowing highlight animations */
+@keyframes subtlePulse {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.03); }
 }
 
-.ag-badge-amber {
-  background-color: #FEF3C7;
-  color: #92400E;
-  border: 1px solid #FDE68A;
-}
-
-.ag-badge-red {
-  background-color: #FEE2E2;
-  color: #991B1B;
-  border: 1px solid #FECACA;
-}
-
-.ag-badge-gray {
-  background-color: #F1F5F9;
-  color: #475569;
-  border: 1px solid #E2E8F0;
+.ag-pulse-glow {
+  animation: subtlePulse 4s ease-in-out infinite;
 }

@@ -6,8 +6,9 @@ export const StatusBadge = ({ status, className = '' }) => {
 
   const normalized = String(status).trim().toLowerCase();
 
-  let variant = 'gray';
-  let dotColor = 'bg-slate-400';
+  // Pure monochrome grayscale status mapping
+  let variantStyles = 'bg-white/[0.06] text-neutral-300 border-white/10';
+  let dotColor = 'bg-neutral-400';
 
   if (
     normalized.includes('completed') ||
@@ -17,8 +18,8 @@ export const StatusBadge = ({ status, className = '' }) => {
     normalized.includes('passed') ||
     normalized.includes('certified')
   ) {
-    variant = 'green';
-    dotColor = 'bg-emerald-500';
+    variantStyles = 'bg-white/15 text-white border-white/25 shadow-[0_0_12px_rgba(255,255,255,0.08)]';
+    dotColor = 'bg-white shadow-[0_0_8px_rgba(255,255,255,0.8)]';
   } else if (
     normalized.includes('active') ||
     normalized.includes('in progress') ||
@@ -27,8 +28,8 @@ export const StatusBadge = ({ status, className = '' }) => {
     normalized.includes('flowering') ||
     normalized.includes('sown')
   ) {
-    variant = 'blue';
-    dotColor = 'bg-blue-500';
+    variantStyles = 'bg-white/10 text-neutral-100 border-white/20';
+    dotColor = 'bg-neutral-200 animate-pulse';
   } else if (
     normalized.includes('pending') ||
     normalized.includes('warning') ||
@@ -36,8 +37,8 @@ export const StatusBadge = ({ status, className = '' }) => {
     normalized.includes('assigned') ||
     normalized.includes('review')
   ) {
-    variant = 'amber';
-    dotColor = 'bg-amber-500';
+    variantStyles = 'bg-neutral-900 text-neutral-300 border-neutral-700';
+    dotColor = 'bg-neutral-400';
   } else if (
     normalized.includes('delayed') ||
     normalized.includes('failed') ||
@@ -45,21 +46,13 @@ export const StatusBadge = ({ status, className = '' }) => {
     normalized.includes('overdue') ||
     normalized.includes('deviation')
   ) {
-    variant = 'red';
-    dotColor = 'bg-red-500';
+    variantStyles = 'bg-neutral-900 text-neutral-200 border-neutral-600';
+    dotColor = 'bg-neutral-300';
   }
-
-  const variantStyles = {
-    green: "bg-emerald-50 text-emerald-800 border-emerald-200",
-    blue: "bg-blue-50 text-blue-800 border-blue-200",
-    amber: "bg-amber-50 text-amber-800 border-amber-200",
-    red: "bg-red-50 text-red-800 border-red-200",
-    gray: "bg-slate-100 text-slate-700 border-slate-200"
-  };
 
   return (
     <span
-      className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 text-xs font-medium rounded-full border shadow-2xs whitespace-nowrap ${variantStyles[variant]} ${className}`}
+      className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 text-2xs font-mono font-medium rounded-full border whitespace-nowrap transition-colors backdrop-blur-xs ${variantStyles} ${className}`}
     >
       <span className={`w-1.5 h-1.5 rounded-full shrink-0 ${dotColor}`} />
       <span>{status}</span>

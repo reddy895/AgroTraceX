@@ -12,14 +12,14 @@ import {
   TestTube,
   Microscope,
   FileCheck2,
-  ChevronRight,
-  CheckCircle2
+  CheckCircle2,
+  Check
 } from 'lucide-react';
 
 const JOURNEY_STEPS = [
   {
     id: 'company',
-    label: 'Seed Company',
+    label: 'SEED COMPANY',
     subtitle: 'Novis AgroSciences',
     icon: Building2,
     status: 'completed',
@@ -27,7 +27,7 @@ const JOURNEY_STEPS = [
   },
   {
     id: 'seed_lot',
-    label: 'Seed Lot',
+    label: 'SEED LOT',
     subtitle: 'LOT-MZ-2026-089',
     icon: PackageCheck,
     status: 'completed',
@@ -35,7 +35,7 @@ const JOURNEY_STEPS = [
   },
   {
     id: 'trial',
-    label: 'Trial Protocol',
+    label: 'TRIAL PROTOCOL',
     subtitle: 'TR-2026-084',
     icon: FlaskConical,
     status: 'completed',
@@ -43,7 +43,7 @@ const JOURNEY_STEPS = [
   },
   {
     id: 'farmer',
-    label: 'Verified Farmer',
+    label: 'VERIFIED FARMER',
     subtitle: 'Rameshwar Patel',
     icon: UserCheck,
     status: 'completed',
@@ -51,7 +51,7 @@ const JOURNEY_STEPS = [
   },
   {
     id: 'field',
-    label: 'Field Plot',
+    label: 'FIELD PLOT',
     subtitle: 'FLD-MP-042 (2.4 Ha)',
     icon: MapPin,
     status: 'completed',
@@ -59,7 +59,7 @@ const JOURNEY_STEPS = [
   },
   {
     id: 'agronomist',
-    label: 'Agronomist',
+    label: 'AGRONOMIST',
     subtitle: 'Dr. Arvind Shrivastava',
     icon: Stethoscope,
     status: 'completed',
@@ -67,7 +67,7 @@ const JOURNEY_STEPS = [
   },
   {
     id: 'monitoring',
-    label: 'Crop Monitoring',
+    label: 'CROP MONITORING',
     subtitle: 'Flowering / VT-R1',
     icon: Eye,
     status: 'active',
@@ -75,7 +75,7 @@ const JOURNEY_STEPS = [
   },
   {
     id: 'harvest',
-    label: 'Harvest',
+    label: 'HARVEST',
     subtitle: 'Expected Oct 2026',
     icon: Scissors,
     status: 'pending',
@@ -83,7 +83,7 @@ const JOURNEY_STEPS = [
   },
   {
     id: 'sample',
-    label: 'Sample Custody',
+    label: 'SAMPLE CUSTODY',
     subtitle: 'SMP-2026-099',
     icon: TestTube,
     status: 'pending',
@@ -91,7 +91,7 @@ const JOURNEY_STEPS = [
   },
   {
     id: 'testing',
-    label: 'Lab Testing',
+    label: 'LAB TESTING',
     subtitle: 'Central Quality Lab',
     icon: Microscope,
     status: 'pending',
@@ -99,7 +99,7 @@ const JOURNEY_STEPS = [
   },
   {
     id: 'report',
-    label: 'Final Report',
+    label: 'FINAL REPORT',
     subtitle: 'AGX Certification',
     icon: FileCheck2,
     status: 'pending',
@@ -113,29 +113,30 @@ export const SeedToResultJourney = ({ activeStepId = 'monitoring', className = '
   );
 
   return (
-    <div className={`bg-white border border-slate-200/90 rounded-xl p-5 shadow-xs ${className}`}>
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4 pb-3 border-b border-slate-100">
+    <div className={`ag-glass rounded-2xl p-6 sm:p-7 border border-white/10 ${className}`}>
+      {/* Header */}
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6 pb-4 border-b border-white/[0.08]">
         <div>
-          <h3 className="text-sm font-bold text-slate-900 uppercase tracking-wider flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-emerald-600" />
+          <h3 className="text-sm font-bold text-white uppercase tracking-wider flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-white shadow-[0_0_8px_#ffffff] animate-pulse" />
             End-to-End Trial Traceability Pipeline
           </h3>
-          <p className="text-xs text-slate-500 mt-0.5">
+          <p className="text-xs text-neutral-400 mt-0.5">
             Immutable chain of custody connecting seed genetics, field execution, and lab results
           </p>
         </div>
-        <span className="text-2xs font-mono px-2.5 py-1 rounded bg-emerald-50 text-emerald-800 border border-emerald-200 self-start sm:self-auto">
-          Stage 7 of 11 Active
+        <span className="text-3xs font-mono px-3 py-1 rounded-full bg-white/10 text-white border border-white/20 self-start sm:self-auto">
+          STAGE 07 OF 11 ACTIVE
         </span>
       </div>
 
-      {/* Horizontal Scrollable Step Nodes */}
-      <div className="relative overflow-x-auto pb-3 pt-1 no-scrollbar">
-        <div className="flex items-center min-w-[900px] justify-between relative px-2">
-          {/* Connecting line */}
-          <div className="absolute left-8 right-8 top-5 h-0.5 bg-slate-200 -z-0" />
+      {/* Horizontal Scrollable Step Nodes (Section 12) */}
+      <div className="relative overflow-x-auto pb-4 pt-2 no-scrollbar">
+        <div className="flex items-center min-w-[1020px] justify-between relative px-4">
+          {/* Subtle Connecting Background Line */}
+          <div className="absolute left-8 right-8 top-5 h-px bg-white/15 -z-0" />
 
-          {JOURNEY_STEPS.map((step, idx) => {
+          {JOURNEY_STEPS.map((step) => {
             const Icon = step.icon;
             const isSelected = selectedStep.id === step.id;
             const isCompleted = step.status === 'completed';
@@ -146,43 +147,45 @@ export const SeedToResultJourney = ({ activeStepId = 'monitoring', className = '
                 key={step.id}
                 onClick={() => setSelectedStep(step)}
                 className="relative z-10 flex flex-col items-center cursor-pointer group px-1"
-                style={{ width: '90px' }}
+                style={{ width: '92px' }}
               >
-                {/* Node circle */}
+                {/* Node Circle */}
                 <div
                   className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-200 ${
                     isSelected
-                      ? 'ring-4 ring-emerald-500/25 scale-110 shadow-md'
+                      ? 'scale-110 ring-4 ring-white/20'
                       : 'group-hover:scale-105'
                   } ${
                     isCompleted
-                      ? 'bg-[#0F4A2A] text-white'
+                      ? 'bg-white text-black border border-white shadow-[0_0_12px_rgba(255,255,255,0.15)]'
                       : isActive
-                      ? 'bg-blue-600 text-white ring-4 ring-blue-400/30'
-                      : 'bg-white border-2 border-slate-300 text-slate-400'
+                      ? 'bg-white text-black border-2 border-white shadow-[0_0_20px_rgba(255,255,255,0.5)] ring-4 ring-white/30'
+                      : 'bg-black border border-neutral-700 text-neutral-500 hover:border-neutral-500'
                   }`}
                 >
                   {isCompleted ? (
-                    <CheckCircle2 className="w-5 h-5 text-emerald-300" />
+                    <Check className="w-5 h-5 text-black stroke-[3]" />
                   ) : (
-                    <Icon className="w-5 h-5" />
+                    <Icon className="w-4 h-4" />
                   )}
                 </div>
 
-                {/* Node Label */}
+                {/* Node Title (Monochrome uppercase) */}
                 <span
-                  className={`text-2xs font-bold text-center mt-2 leading-tight transition-colors ${
+                  className={`text-3xs font-mono font-bold text-center mt-2.5 leading-tight tracking-wider transition-colors ${
                     isSelected
-                      ? 'text-[#0F4A2A]'
+                      ? 'text-white'
                       : isActive
-                      ? 'text-blue-700 font-bold'
-                      : 'text-slate-600'
+                      ? 'text-white'
+                      : isCompleted
+                      ? 'text-neutral-300'
+                      : 'text-neutral-500'
                   }`}
                 >
                   {step.label}
                 </span>
 
-                <span className="text-3xs text-slate-400 text-center truncate max-w-[85px] mt-0.5">
+                <span className="text-3xs font-mono text-neutral-400 text-center truncate max-w-[85px] mt-0.5">
                   {step.subtitle}
                 </span>
               </div>
@@ -193,31 +196,35 @@ export const SeedToResultJourney = ({ activeStepId = 'monitoring', className = '
 
       {/* Selected Node Details Box */}
       {selectedStep && (
-        <div className="mt-4 p-4 rounded-lg bg-slate-50 border border-slate-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-          <div className="flex items-start gap-3">
-            <div className="p-2.5 rounded-lg bg-white border border-slate-200 text-[#0F4A2A] shrink-0">
+        <div className="mt-5 p-4 sm:p-5 rounded-xl bg-white/[0.03] border border-white/[0.08] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div className="flex items-start gap-3.5">
+            <div className="p-3 rounded-xl bg-white/10 border border-white/20 text-white shrink-0">
               <selectedStep.icon className="w-5 h-5" />
             </div>
             <div>
-              <div className="flex items-center gap-2">
-                <h4 className="text-sm font-bold text-slate-900">{selectedStep.label}</h4>
+              <div className="flex items-center gap-2.5">
+                <h4 className="text-sm font-bold text-white tracking-wide">{selectedStep.label}</h4>
                 <span
-                  className={`text-2xs font-semibold px-2 py-0.5 rounded-full ${
+                  className={`text-3xs font-mono px-2 py-0.5 rounded-full border ${
                     selectedStep.status === 'completed'
-                      ? 'bg-emerald-100 text-emerald-800'
+                      ? 'bg-white/10 text-white border-white/20'
                       : selectedStep.status === 'active'
-                      ? 'bg-blue-100 text-blue-800'
-                      : 'bg-slate-200 text-slate-700'
+                      ? 'bg-white text-black font-semibold border-white shadow-[0_0_10px_rgba(255,255,255,0.3)]'
+                      : 'bg-neutral-900 text-neutral-400 border-neutral-700'
                   }`}
                 >
-                  {selectedStep.status === 'completed' ? 'Verified / Passed' : selectedStep.status === 'active' ? 'Current Active Step' : 'Scheduled'}
+                  {selectedStep.status === 'completed'
+                    ? 'Verified & Passed'
+                    : selectedStep.status === 'active'
+                    ? 'Current In-Progress Step'
+                    : 'Scheduled Stage'}
                 </span>
               </div>
-              <p className="text-xs text-slate-600 mt-1 max-w-xl">{selectedStep.desc}</p>
+              <p className="text-xs text-neutral-400 mt-1 max-w-xl leading-relaxed">{selectedStep.desc}</p>
             </div>
           </div>
-          <div className="text-xs font-mono text-slate-500 shrink-0 self-end sm:self-center">
-            Entity: <span className="font-semibold text-slate-800">{selectedStep.subtitle}</span>
+          <div className="text-xs font-mono text-neutral-400 shrink-0 self-end sm:self-center">
+            Entity: <span className="font-semibold text-white">{selectedStep.subtitle}</span>
           </div>
         </div>
       )}

@@ -8,75 +8,75 @@ const sites = [
   { name: 'Gauribidanur', x: '45%', y: '82%', status: 'offline', label: 'offline' }
 ];
 
-const statusStyles = {
-  active: 'bg-[#6f8b50] ring-[#dce8d1]',
-  attention: 'bg-[#b4863c] ring-[#fbf1d9]',
-  offline: 'bg-[#9b987f] ring-[#f0ecdf]'
-};
-
 export const FieldIntelligencePanel = ({ className = '' }) => {
   return (
-    <section className={`border border-slate-200/90 rounded-[10px] bg-[#fffdf7] shadow-xs overflow-hidden ${className}`}>
-      <div className="px-5 py-4 border-b border-slate-100 flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
+    <section className={`ag-glass rounded-2xl border border-white/10 overflow-hidden ${className}`}>
+      <div className="px-6 py-5 border-b border-white/[0.08] flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
         <div>
-          <div className="flex items-center gap-2">
-            <h2 className="text-base font-semibold text-slate-900 leading-snug">Field Intelligence</h2>
-            <span className="inline-flex items-center gap-1 text-2xs font-semibold uppercase tracking-[0.08em] text-emerald-800 bg-emerald-50 border border-emerald-100 rounded-full px-2 py-1">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-600" /> Live
+          <div className="flex items-center gap-2.5">
+            <h2 className="text-base font-bold text-white tracking-tight leading-snug">Field Intelligence</h2>
+            <span className="inline-flex items-center gap-1 text-3xs font-mono font-medium uppercase tracking-[0.08em] text-white bg-white/10 border border-white/20 rounded-full px-2.5 py-0.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" /> Live Telemetry
             </span>
           </div>
-          <p className="text-xs text-slate-500 mt-1 leading-relaxed">Trial site coverage and field activity across the active portfolio</p>
+          <p className="text-xs text-neutral-400 mt-1 leading-relaxed">Trial site coverage and sensor telemetry across the active portfolio</p>
         </div>
-        <span className="text-xs text-slate-500 flex items-center gap-1.5 whitespace-nowrap">
-          <Wifi className="w-3.5 h-3.5 text-emerald-700" /> Last sync 2 min ago
+        <span className="text-xs font-mono text-neutral-400 flex items-center gap-1.5 whitespace-nowrap">
+          <Wifi className="w-3.5 h-3.5 text-white" /> Last sync 2 min ago
         </span>
       </div>
 
       <div className="grid lg:grid-cols-[1.45fr_1fr]">
-        <div className="relative min-h-[248px] bg-[#eef1e7] overflow-hidden border-b lg:border-b-0 lg:border-r border-slate-100">
-          <svg className="absolute inset-0 w-full h-full" viewBox="0 0 640 300" preserveAspectRatio="none" aria-hidden="true">
-            <path d="M0 65 C90 28 150 102 248 68 S418 22 640 66" fill="none" stroke="#d5ddc9" strokeWidth="18" opacity="0.65" />
-            <path d="M-20 218 C90 170 160 252 286 205 S490 176 670 230" fill="none" stroke="#d5ddc9" strokeWidth="28" opacity="0.65" />
-            <path d="M70 0 C112 78 94 148 132 300 M330 0 C302 78 366 148 338 300 M548 0 C508 96 570 168 520 300" fill="none" stroke="#d9e1ce" strokeWidth="2" strokeDasharray="6 8" />
-            <path d="M0 138 C105 114 172 165 272 136 S460 104 640 148" fill="none" stroke="#c1cfb1" strokeWidth="2" />
+        <div className="relative min-h-[260px] bg-[#050505] overflow-hidden border-b lg:border-b-0 lg:border-r border-white/[0.08]">
+          <svg className="absolute inset-0 w-full h-full opacity-30" viewBox="0 0 640 300" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M0 65 C90 28 150 102 248 68 S418 22 640 66" fill="none" stroke="#555555" strokeWidth="18" opacity="0.65" />
+            <path d="M-20 218 C90 170 160 252 286 205 S490 176 670 230" fill="none" stroke="#555555" strokeWidth="28" opacity="0.65" />
+            <path d="M70 0 C112 78 94 148 132 300 M330 0 C302 78 366 148 338 300 M548 0 C508 96 570 168 520 300" fill="none" stroke="#444444" strokeWidth="1" strokeDasharray="6 8" />
+            <path d="M0 138 C105 114 172 165 272 136 S460 104 640 148" fill="none" stroke="#888888" strokeWidth="2" />
           </svg>
-          <div className="absolute top-4 left-5 flex items-center gap-2 text-xs font-semibold text-slate-700">
-            <MapPin className="w-4 h-4 text-[#556D3F]" /> 62 trial sites mapped
+          <div className="absolute top-4 left-5 flex items-center gap-2 text-xs font-mono text-neutral-300 bg-black/70 px-3 py-1.5 rounded-full border border-white/10">
+            <MapPin className="w-4 h-4 text-white" /> 62 trial sites mapped
           </div>
           {sites.map((site) => (
             <div key={site.name} className="absolute group" style={{ left: site.x, top: site.y }}>
-              <span className={`block w-4 h-4 rounded-full ring-4 ${statusStyles[site.status]} shadow-sm`} />
-              <div className="absolute left-5 -top-2 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-150 pointer-events-none bg-[#20291f] text-white px-2 py-1 rounded text-2xs shadow-lg">
-                <span className="font-semibold">{site.name}</span> <span className="text-slate-300">{site.label}</span>
+              <span className="block w-3.5 h-3.5 rounded-full bg-white shadow-[0_0_10px_#ffffff] ring-4 ring-white/20" />
+              <div className="absolute left-5 -top-2 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-150 pointer-events-none bg-black text-white px-2.5 py-1 rounded-lg border border-white/20 text-3xs font-mono shadow-xl">
+                <span className="font-semibold text-white">{site.name}</span> <span className="text-neutral-400">({site.label})</span>
               </div>
             </div>
           ))}
-          <div className="absolute bottom-4 left-5 flex items-center gap-3 text-2xs text-slate-600 bg-[#fffdf7]/85 border border-slate-200 rounded px-2.5 py-1.5">
-            <span className="inline-flex items-center gap-1"><span className="w-1.5 h-1.5 rounded-full bg-[#6f8b50]" /> Active</span>
-            <span className="inline-flex items-center gap-1"><span className="w-1.5 h-1.5 rounded-full bg-[#b4863c]" /> Attention</span>
-            <span className="inline-flex items-center gap-1"><span className="w-1.5 h-1.5 rounded-full bg-[#9b987f]" /> Offline</span>
+          <div className="absolute bottom-4 left-5 flex items-center gap-3 text-3xs font-mono text-neutral-300 bg-black/80 border border-white/15 rounded-full px-3 py-1.5">
+            <span className="inline-flex items-center gap-1.5"><span className="w-1.5 h-1.5 rounded-full bg-white" /> Active</span>
+            <span className="inline-flex items-center gap-1.5"><span className="w-1.5 h-1.5 rounded-full bg-neutral-400" /> Attention</span>
+            <span className="inline-flex items-center gap-1.5"><span className="w-1.5 h-1.5 rounded-full bg-neutral-600" /> Offline</span>
           </div>
         </div>
 
-        <div className="p-5 grid grid-cols-2 gap-x-5 gap-y-5 content-center">
+        <div className="p-6 grid grid-cols-2 gap-x-6 gap-y-6 content-center bg-white/[0.01]">
           <div>
-            <span className="text-2xs uppercase tracking-[0.08em] font-semibold text-slate-500">Verified area</span>
-            <strong className="block text-2xl font-bold text-slate-900 mt-1">34.6 <span className="text-sm font-semibold text-slate-500">Ha</span></strong>
+            <span className="text-3xs uppercase tracking-[0.1em] font-mono text-neutral-400">Verified area</span>
+            <strong className="block text-2xl sm:text-3xl font-bold font-mono text-white mt-1">34.6 <span className="text-xs font-normal text-neutral-400">Ha</span></strong>
           </div>
           <div>
-            <span className="text-2xs uppercase tracking-[0.08em] font-semibold text-slate-500">Sites reporting</span>
-            <strong className="block text-2xl font-bold text-slate-900 mt-1">58<span className="text-sm font-semibold text-slate-500">/62</span></strong>
+            <span className="text-3xs uppercase tracking-[0.1em] font-mono text-neutral-400">Sites reporting</span>
+            <strong className="block text-2xl sm:text-3xl font-bold font-mono text-white mt-1">58<span className="text-xs font-normal text-neutral-400">/62</span></strong>
           </div>
-          <div className="flex items-start gap-2.5">
-            <Activity className="w-4 h-4 text-emerald-700 mt-0.5" />
-            <div><span className="text-2xs uppercase tracking-[0.08em] font-semibold text-slate-500">Today</span><strong className="block text-lg font-bold text-slate-900 mt-0.5">18 <span className="text-xs font-medium text-slate-500">observations</span></strong></div>
+          <div className="flex items-start gap-3">
+            <Activity className="w-4 h-4 text-white mt-0.5" />
+            <div>
+              <span className="text-3xs uppercase tracking-[0.1em] font-mono text-neutral-400">Today</span>
+              <strong className="block text-lg font-bold text-white mt-0.5">18 <span className="text-xs font-normal text-neutral-400">observations</span></strong>
+            </div>
           </div>
-          <div className="flex items-start gap-2.5">
-            <Radio className="w-4 h-4 text-amber-600 mt-0.5" />
-            <div><span className="text-2xs uppercase tracking-[0.08em] font-semibold text-slate-500">Pending action</span><strong className="block text-lg font-bold text-slate-900 mt-0.5">7 <span className="text-xs font-medium text-slate-500">items</span></strong></div>
+          <div className="flex items-start gap-3">
+            <Radio className="w-4 h-4 text-neutral-300 mt-0.5" />
+            <div>
+              <span className="text-3xs uppercase tracking-[0.1em] font-mono text-neutral-400">Pending action</span>
+              <strong className="block text-lg font-bold text-white mt-0.5">7 <span className="text-xs font-normal text-neutral-400">items</span></strong>
+            </div>
           </div>
-          <div className="col-span-2 flex items-center gap-2 text-xs text-slate-600 border-t border-slate-100 pt-4">
-            <CloudRain className="w-4 h-4 text-amber-600" /> 2 weather alerts affecting active sites
+          <div className="col-span-2 flex items-center gap-2 text-xs font-mono text-neutral-400 border-t border-white/[0.08] pt-4">
+            <CloudRain className="w-4 h-4 text-white" /> 2 weather alerts affecting active sites
           </div>
         </div>
       </div>

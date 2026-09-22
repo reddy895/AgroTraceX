@@ -1,51 +1,28 @@
 // src/components/layout/AppLayout.jsx
-import React, { useState } from 'react';
-import { Outlet } from 'react-router-dom';
-import { Sidebar } from './Sidebar';
+import React from 'react';
+import { Outlet, useLocation } from 'react-router-dom';
 import { Topbar } from './Topbar';
 import { GlobalSearchModal } from './GlobalSearchModal';
-import { Drawer } from '../ui/Drawer';
+import { Footer } from '../landing/Footer';
 
 export const AppLayout = () => {
-  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const isHome = location.pathname === '/';
 
   return (
-    <div className="min-h-screen bg-slate-50 flex flex-col font-sans">
-      <div className="flex flex-1 min-h-screen">
-        {/* Desktop Sidebar */}
-        <div className="hidden lg:flex shrink-0">
-          <Sidebar
-            collapsed={sidebarCollapsed}
-            onToggleCollapse={() => setSidebarCollapsed(!sidebarCollapsed)}
-          />
-        </div>
+    <div className="min-h-screen bg-[#030303] text-neutral-100 flex flex-col font-sans selection:bg-white selection:text-black">
+      {/* Floating Sticky Glass Top Navigation Bar */}
+      <Topbar />
 
-        {/* Mobile Sidebar Drawer */}
-        <Drawer
-          isOpen={mobileMenuOpen}
-          onClose={() => setMobileMenuOpen(false)}
-          position="left"
-          width="max-w-xs"
-          className="p-0"
-        >
-          <Sidebar
-            isMobile={true}
-            onCloseMobile={() => setMobileMenuOpen(false)}
-          />
-        </Drawer>
+      {/* Main Content Area: Full width, continuous scrollable */}
+      <main className={`flex-1 w-full flex flex-col ${isHome ? '' : 'pt-24 sm:pt-28 pb-16 max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-12'}`}>
+        <Outlet />
+      </main>
 
-        {/* Main Content Area */}
-        <div className="flex-1 flex flex-col min-w-0">
-          <Topbar onOpenMobileMenu={() => setMobileMenuOpen(true)} />
+      {/* Footer rendered globally on subpages if needed */}
+      {!isHome && <Footer />}
 
-          <main className="flex-1 p-5 sm:p-7 lg:p-9 max-w-[1440px] w-full mx-auto">
-            <Outlet />
-          </main>
-        </div>
-      </div>
-
-      {/* Global Search Dialog */}
+      {/* Global Search Dialog (⌘K) */}
       <GlobalSearchModal />
     </div>
   );

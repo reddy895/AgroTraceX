@@ -8,21 +8,23 @@ export const Badge = ({
   className = ''
 }) => {
   const sizeStyles = {
-    sm: "px-2 py-0.5 text-xs",
-    md: "px-2.5 py-1 text-xs"
+    sm: "px-2 py-0.5 text-3xs",
+    md: "px-2.5 py-1 text-2xs"
   };
 
   const variantStyles = {
-    green: "bg-emerald-50 text-emerald-800 border-emerald-200",
-    blue: "bg-blue-50 text-blue-800 border-blue-200",
-    amber: "bg-amber-50 text-amber-800 border-amber-200",
-    red: "bg-red-50 text-red-800 border-red-200",
-    gray: "bg-slate-100 text-slate-700 border-slate-200"
+    green: "bg-white/10 text-white border-white/20",
+    blue: "bg-white/[0.08] text-neutral-200 border-white/15",
+    amber: "bg-neutral-800 text-neutral-300 border-neutral-700",
+    red: "bg-neutral-900 text-neutral-200 border-neutral-700",
+    gray: "bg-white/[0.05] text-neutral-300 border-white/10"
   };
 
   return (
     <span
-      className={`inline-flex items-center font-medium rounded-full border ${sizeStyles[size]} ${variantStyles[variant] || variantStyles.gray} ${className}`}
+      className={`inline-flex items-center font-mono font-medium rounded-full border backdrop-blur-xs ${
+        sizeStyles[size] || sizeStyles.sm
+      } ${variantStyles[variant] || variantStyles.gray} ${className}`}
     >
       {children}
     </span>

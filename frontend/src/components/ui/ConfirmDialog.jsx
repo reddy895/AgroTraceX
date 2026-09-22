@@ -26,7 +26,7 @@ export const ConfirmDialog = ({
             {cancelText}
           </Button>
           <Button
-            variant={variant}
+            variant={variant === 'danger' ? 'primary' : 'primary'}
             size="sm"
             onClick={onConfirm}
             loading={loading}
@@ -37,18 +37,12 @@ export const ConfirmDialog = ({
       }
     >
       <div className="flex items-start gap-4">
-        <div
-          className={`p-2.5 rounded-full shrink-0 ${
-            variant === 'danger'
-              ? 'bg-red-50 text-red-600 border border-red-100'
-              : 'bg-amber-50 text-amber-600 border border-amber-100'
-          }`}
-        >
+        <div className="p-2.5 rounded-full shrink-0 bg-white/10 text-white border border-white/20">
           <AlertTriangle className="w-5 h-5" />
         </div>
         <div>
-          <h4 className="text-base font-semibold text-slate-900">{title}</h4>
-          <p className="mt-1.5 text-xs sm:text-sm text-slate-600 leading-relaxed">{message}</p>
+          <h4 className="text-base font-bold text-white tracking-tight">{title}</h4>
+          <p className="mt-1.5 text-xs text-neutral-400 leading-relaxed">{message}</p>
         </div>
       </div>
     </Modal>

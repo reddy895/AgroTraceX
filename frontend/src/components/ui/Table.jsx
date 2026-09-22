@@ -14,11 +14,13 @@ export const Table = ({
   className = ''
 }) => {
   return (
-    <div className={`w-full overflow-hidden border border-slate-200/90 rounded-[10px] bg-[#fffdf7] shadow-xs ${className}`}>
-      <div className="overflow-x-auto">
-        <table className="w-full text-left text-sm border-collapse">
+    <div
+      className={`w-full overflow-hidden border border-white/[0.08] rounded-2xl ag-glass ${className}`}
+    >
+      <div className="overflow-x-auto no-scrollbar">
+        <table className="w-full text-left text-xs border-collapse">
           <thead>
-            <tr className="bg-slate-50/80 border-b border-slate-200 text-slate-600 text-xs font-semibold uppercase tracking-[0.08em]">
+            <tr className="bg-white/[0.03] border-b border-white/[0.08] text-neutral-400 text-3xs font-semibold uppercase tracking-[0.1em]">
               {columns.map((col, idx) => (
                 <th
                   key={col.key || idx}
@@ -29,12 +31,15 @@ export const Table = ({
               ))}
             </tr>
           </thead>
-          <tbody className="divide-y divide-slate-100 text-slate-700">
+          <tbody className="divide-y divide-white/[0.05] text-neutral-300">
             {loading ? (
               <tr>
-                <td colSpan={columns.length} className="px-4 py-12 text-center text-slate-500">
-                  <div className="inline-flex items-center gap-2 text-sm">
-                    <Loader2 className="w-5 h-5 animate-spin text-[#556D3F]" />
+                <td
+                  colSpan={columns.length}
+                  className="px-4 py-12 text-center text-neutral-400"
+                >
+                  <div className="inline-flex items-center gap-2 text-xs">
+                    <Loader2 className="w-4 h-4 animate-spin text-white" />
                     <span>Loading data records...</span>
                   </div>
                 </td>
@@ -54,14 +59,16 @@ export const Table = ({
                 <tr
                   key={row.id || rowIdx}
                   onClick={() => onRowClick && onRowClick(row)}
-                  className={`transition-colors hover:bg-slate-50/70 ${
+                  className={`transition-colors hover:bg-white/[0.04] ${
                     onRowClick ? 'cursor-pointer' : ''
                   }`}
                 >
                   {columns.map((col, colIdx) => (
                     <td
                       key={col.key || colIdx}
-                      className={`px-4 py-3.5 whitespace-nowrap text-slate-800 ${col.className || ''}`}
+                      className={`px-4 py-3.5 whitespace-nowrap text-neutral-200 ${
+                        col.className || ''
+                      }`}
                     >
                       {col.render ? col.render(row, rowIdx) : row[col.key]}
                     </td>

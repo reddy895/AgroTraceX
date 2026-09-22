@@ -15,13 +15,13 @@ export const Pagination = ({
   const endItem = Math.min(currentPage * pageSize, totalItems || currentPage * pageSize);
 
   return (
-    <div className={`flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 px-4 py-3 bg-white border-t border-slate-200 text-xs text-slate-600 ${className}`}>
+    <div className={`flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 px-4 py-3 bg-white/[0.02] border-t border-white/[0.08] text-xs text-neutral-400 ${className}`}>
       <div>
-        Showing <span className="font-semibold text-slate-900">{startItem}</span> to{' '}
-        <span className="font-semibold text-slate-900">{endItem}</span>
+        Showing <span className="font-semibold text-white">{startItem}</span> to{' '}
+        <span className="font-semibold text-white">{endItem}</span>
         {totalItems && (
           <>
-            {' '}of <span className="font-semibold text-slate-900">{totalItems}</span> entries
+            {' '}of <span className="font-semibold text-white">{totalItems}</span> entries
           </>
         )}
       </div>
@@ -35,8 +35,8 @@ export const Pagination = ({
         >
           Previous
         </Button>
-        <span className="px-2 py-1 font-medium text-slate-800">
-          Page {currentPage} of {totalPages}
+        <span className="px-2 py-1 font-mono text-3xs text-neutral-300">
+          Page {currentPage} / {totalPages}
         </span>
         <Button
           variant="outline"
