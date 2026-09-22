@@ -11,6 +11,8 @@ import { ImpactSection } from '../components/landing/ImpactSection';
 import { LandingCtaSection } from '../components/landing/LandingCtaSection';
 import { Footer } from '../components/landing/Footer';
 
+import { BackgroundParticleField } from '../components/shared/BackgroundParticleField';
+
 export const LandingPage = () => {
   const navigate = useNavigate();
 
@@ -24,7 +26,10 @@ export const LandingPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#000000] text-neutral-100 flex flex-col font-sans selection:bg-white selection:text-black">
+    <div className="min-h-screen bg-[#000000] text-neutral-100 flex flex-col font-sans selection:bg-white selection:text-black relative">
+      {/* Background Interactive Particle Field for Whole Page */}
+      <BackgroundParticleField />
+
       {/* SECTION 1: Hero with 3D Plant */}
       <HeroSection
         onGetStarted={handleGetStarted}

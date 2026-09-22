@@ -12,14 +12,13 @@ import {
   TestTube,
   Microscope,
   FileCheck2,
-  CheckCircle2,
   Check
 } from 'lucide-react';
 
 const JOURNEY_STEPS = [
   {
     id: 'company',
-    label: 'SEED COMPANY',
+    label: 'Seed Company',
     subtitle: 'Novis AgroSciences',
     icon: Building2,
     status: 'completed',
@@ -27,7 +26,7 @@ const JOURNEY_STEPS = [
   },
   {
     id: 'seed_lot',
-    label: 'SEED LOT',
+    label: 'Seed Lot',
     subtitle: 'LOT-MZ-2026-089',
     icon: PackageCheck,
     status: 'completed',
@@ -35,7 +34,7 @@ const JOURNEY_STEPS = [
   },
   {
     id: 'trial',
-    label: 'TRIAL PROTOCOL',
+    label: 'Trial Protocol',
     subtitle: 'TR-2026-084',
     icon: FlaskConical,
     status: 'completed',
@@ -43,7 +42,7 @@ const JOURNEY_STEPS = [
   },
   {
     id: 'farmer',
-    label: 'VERIFIED FARMER',
+    label: 'Farmer',
     subtitle: 'Rameshwar Patel',
     icon: UserCheck,
     status: 'completed',
@@ -51,7 +50,7 @@ const JOURNEY_STEPS = [
   },
   {
     id: 'field',
-    label: 'FIELD PLOT',
+    label: 'Field Plot',
     subtitle: 'FLD-MP-042 (2.4 Ha)',
     icon: MapPin,
     status: 'completed',
@@ -59,7 +58,7 @@ const JOURNEY_STEPS = [
   },
   {
     id: 'agronomist',
-    label: 'AGRONOMIST',
+    label: 'Agronomist',
     subtitle: 'Dr. Arvind Shrivastava',
     icon: Stethoscope,
     status: 'completed',
@@ -67,7 +66,7 @@ const JOURNEY_STEPS = [
   },
   {
     id: 'monitoring',
-    label: 'CROP MONITORING',
+    label: 'Monitoring',
     subtitle: 'Flowering / VT-R1',
     icon: Eye,
     status: 'active',
@@ -75,7 +74,7 @@ const JOURNEY_STEPS = [
   },
   {
     id: 'harvest',
-    label: 'HARVEST',
+    label: 'Harvest',
     subtitle: 'Expected Oct 2026',
     icon: Scissors,
     status: 'pending',
@@ -83,7 +82,7 @@ const JOURNEY_STEPS = [
   },
   {
     id: 'sample',
-    label: 'SAMPLE CUSTODY',
+    label: 'Sample Custody',
     subtitle: 'SMP-2026-099',
     icon: TestTube,
     status: 'pending',
@@ -91,7 +90,7 @@ const JOURNEY_STEPS = [
   },
   {
     id: 'testing',
-    label: 'LAB TESTING',
+    label: 'Lab Testing',
     subtitle: 'Central Quality Lab',
     icon: Microscope,
     status: 'pending',
@@ -99,7 +98,7 @@ const JOURNEY_STEPS = [
   },
   {
     id: 'report',
-    label: 'FINAL REPORT',
+    label: 'Final Report',
     subtitle: 'AGX Certification',
     icon: FileCheck2,
     status: 'pending',
@@ -130,13 +129,18 @@ export const SeedToResultJourney = ({ activeStepId = 'monitoring', className = '
         </span>
       </div>
 
-      {/* Horizontal Scrollable Step Nodes (Section 12) */}
-      <div className="relative overflow-x-auto pb-4 pt-2 no-scrollbar">
-        <div className="flex items-center min-w-[1020px] justify-between relative px-4">
-          {/* Subtle Connecting Background Line */}
-          <div className="absolute left-8 right-8 top-5 h-px bg-white/15 -z-0" />
+      {/* Horizontal Scrollable Step Nodes */}
+      <div className="relative overflow-x-auto pb-4 pt-3 no-scrollbar">
+        <div className="flex items-start min-w-[1020px] justify-between relative px-6">
+          {/* Base Inactive Connecting Line */}
+          <div className="absolute left-10 right-10 top-5 h-px bg-white/15" />
+          {/* Active Completed Progress Line (from step 1 to step 7) */}
+          <div
+            className="absolute left-10 top-5 h-px bg-gradient-to-r from-white via-white to-white/80 transition-all duration-500"
+            style={{ width: '58%' }}
+          />
 
-          {JOURNEY_STEPS.map((step) => {
+          {JOURNEY_STEPS.map((step, idx) => {
             const Icon = step.icon;
             const isSelected = selectedStep.id === step.id;
             const isCompleted = step.status === 'completed';
@@ -146,47 +150,47 @@ export const SeedToResultJourney = ({ activeStepId = 'monitoring', className = '
               <div
                 key={step.id}
                 onClick={() => setSelectedStep(step)}
-                className="relative z-10 flex flex-col items-center cursor-pointer group px-1"
-                style={{ width: '92px' }}
+                className="relative z-10 flex flex-col items-center cursor-pointer group px-1 select-none"
+                style={{ width: '84px' }}
               >
                 {/* Node Circle */}
                 <div
                   className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-200 ${
                     isSelected
-                      ? 'scale-110 ring-4 ring-white/20'
+                      ? 'scale-110 ring-2 ring-white ring-offset-2 ring-offset-black'
                       : 'group-hover:scale-105'
                   } ${
                     isCompleted
-                      ? 'bg-white text-black border border-white shadow-[0_0_12px_rgba(255,255,255,0.15)]'
+                      ? 'bg-white text-black shadow-[0_0_14px_rgba(255,255,255,0.2)]'
                       : isActive
-                      ? 'bg-white text-black border-2 border-white shadow-[0_0_20px_rgba(255,255,255,0.5)] ring-4 ring-white/30'
-                      : 'bg-black border border-neutral-700 text-neutral-500 hover:border-neutral-500'
+                      ? 'bg-white text-black shadow-[0_0_20px_rgba(255,255,255,0.6)] ring-2 ring-white/60'
+                      : 'bg-[#0c0d10] border border-white/20 text-neutral-400 hover:border-white/40 hover:text-white'
                   }`}
                 >
                   {isCompleted ? (
-                    <Check className="w-5 h-5 text-black stroke-[3]" />
+                    <Check className="w-4 h-4 text-black stroke-[3]" />
                   ) : (
                     <Icon className="w-4 h-4" />
                   )}
                 </div>
 
-                {/* Node Title (Monochrome uppercase) */}
+                {/* Step Index & Clean Title (Single aligned baseline, no bulky subtitles) */}
+                <span className="text-[10px] font-mono text-neutral-500 mt-2.5">
+                  0{idx + 1}
+                </span>
+
                 <span
-                  className={`text-3xs font-mono font-bold text-center mt-2.5 leading-tight tracking-wider transition-colors ${
+                  className={`text-xs font-semibold text-center mt-0.5 leading-snug tracking-tight transition-colors whitespace-nowrap ${
                     isSelected
-                      ? 'text-white'
+                      ? 'text-white font-bold'
                       : isActive
                       ? 'text-white'
                       : isCompleted
-                      ? 'text-neutral-300'
+                      ? 'text-neutral-200'
                       : 'text-neutral-500'
                   }`}
                 >
                   {step.label}
-                </span>
-
-                <span className="text-3xs font-mono text-neutral-400 text-center truncate max-w-[85px] mt-0.5">
-                  {step.subtitle}
                 </span>
               </div>
             );
@@ -194,37 +198,37 @@ export const SeedToResultJourney = ({ activeStepId = 'monitoring', className = '
         </div>
       </div>
 
-      {/* Selected Node Details Box */}
+      {/* Selected Node Details Box (Clean & Uncluttered) */}
       {selectedStep && (
         <div className="mt-5 p-4 sm:p-5 rounded-xl bg-white/[0.03] border border-white/[0.08] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div className="flex items-start gap-3.5">
-            <div className="p-3 rounded-xl bg-white/10 border border-white/20 text-white shrink-0">
-              <selectedStep.icon className="w-5 h-5" />
+            <div className="p-2.5 rounded-xl bg-white/10 border border-white/15 text-white shrink-0 mt-0.5">
+              <selectedStep.icon className="w-4 h-4" />
             </div>
             <div>
               <div className="flex items-center gap-2.5">
-                <h4 className="text-sm font-bold text-white tracking-wide">{selectedStep.label}</h4>
+                <h4 className="text-sm font-semibold text-white tracking-tight">{selectedStep.label}</h4>
                 <span
-                  className={`text-3xs font-mono px-2 py-0.5 rounded-full border ${
+                  className={`text-3xs font-mono px-2 py-0.5 rounded-md border ${
                     selectedStep.status === 'completed'
-                      ? 'bg-white/10 text-white border-white/20'
+                      ? 'bg-white/5 text-neutral-300 border-white/15'
                       : selectedStep.status === 'active'
-                      ? 'bg-white text-black font-semibold border-white shadow-[0_0_10px_rgba(255,255,255,0.3)]'
-                      : 'bg-neutral-900 text-neutral-400 border-neutral-700'
+                      ? 'bg-white text-black font-semibold border-white shadow-[0_0_8px_rgba(255,255,255,0.25)]'
+                      : 'bg-neutral-900 text-neutral-400 border-neutral-800'
                   }`}
                 >
                   {selectedStep.status === 'completed'
-                    ? 'Verified & Passed'
+                    ? 'Verified'
                     : selectedStep.status === 'active'
-                    ? 'Current In-Progress Step'
-                    : 'Scheduled Stage'}
+                    ? 'In Progress'
+                    : 'Scheduled'}
                 </span>
               </div>
               <p className="text-xs text-neutral-400 mt-1 max-w-xl leading-relaxed">{selectedStep.desc}</p>
             </div>
           </div>
-          <div className="text-xs font-mono text-neutral-400 shrink-0 self-end sm:self-center">
-            Entity: <span className="font-semibold text-white">{selectedStep.subtitle}</span>
+          <div className="text-xs font-mono text-neutral-400 shrink-0 self-end sm:self-center bg-white/[0.03] px-3 py-1.5 rounded-lg border border-white/[0.06]">
+            Entity: <span className="text-white font-medium">{selectedStep.subtitle}</span>
           </div>
         </div>
       )}

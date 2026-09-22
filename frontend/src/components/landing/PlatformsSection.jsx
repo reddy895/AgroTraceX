@@ -94,38 +94,34 @@ export const PlatformsSection = () => {
 
         {/* 8 Platforms Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
-          {platforms.map((p) => {
+          {platforms.map((p, idx) => {
             const Icon = p.icon;
             return (
               <div
                 key={p.title}
-                className="ag-glass rounded-2xl p-6 border border-white/10 transition-all duration-300 hover:border-white/30 hover:bg-white/[0.06] hover:-translate-y-1.5 hover:shadow-[0_20px_50px_rgba(0,0,0,0.8),0_0_25px_rgba(255,255,255,0.04)] group flex flex-col justify-between"
+                className="ag-glass rounded-2xl p-6 border border-white/10 transition-all duration-300 hover:border-white/30 hover:bg-white/[0.05] hover:-translate-y-1 hover:shadow-[0_20px_50px_rgba(0,0,0,0.8),0_0_20px_rgba(255,255,255,0.03)] group flex flex-col justify-between"
               >
                 <div>
-                  <div className="flex items-start justify-between gap-3 mb-5">
-                    <div className="w-10 h-10 rounded-xl bg-white/[0.05] border border-white/10 flex items-center justify-center text-white group-hover:border-white/40 group-hover:bg-white/[0.12] transition-all">
-                      <Icon className="w-4 h-4 text-neutral-200 group-hover:text-white" />
+                  <div className="flex items-center justify-between mb-5">
+                    <div className="w-10 h-10 rounded-xl bg-white/[0.06] border border-white/15 flex items-center justify-center text-white group-hover:border-white/40 group-hover:bg-white group-hover:text-black transition-all">
+                      <Icon className="w-4 h-4" />
                     </div>
-                    <span className="px-2.5 py-1 rounded-full bg-white/[0.04] border border-white/10 text-3xs font-mono text-neutral-400 group-hover:text-neutral-200">
-                      {p.badge}
+                    <span className="text-2xs font-mono text-neutral-400 font-medium">
+                      0{idx + 1}
                     </span>
                   </div>
 
-                  <span className="text-3xs font-mono uppercase tracking-widest text-neutral-500 block mb-1">
-                    {p.category}
-                  </span>
-
-                  <h3 className="text-base sm:text-lg font-bold text-white tracking-tight leading-snug">
+                  <h3 className="text-lg font-bold text-white tracking-tight leading-snug">
                     {p.title}
                   </h3>
 
-                  <p className="text-xs text-neutral-400 mt-2 leading-relaxed">
+                  <p className="text-xs text-neutral-400 mt-2.5 leading-relaxed">
                     {p.desc}
                   </p>
                 </div>
 
                 <div className="mt-6 pt-4 border-t border-white/[0.06] flex items-center justify-between text-xs font-mono text-neutral-400 group-hover:text-white transition-colors">
-                  <span className="text-3xs uppercase tracking-wider">Enterprise Grade</span>
+                  <span className="text-3xs uppercase tracking-wider font-medium">Verified Capability</span>
                   <ArrowRight className="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" />
                 </div>
               </div>
